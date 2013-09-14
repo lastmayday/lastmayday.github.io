@@ -1,0 +1,16 @@
+---
+layout: main
+title: lastmayday's thinking
+---
+
+{% assign post = site.posts.first %}
+{% assign content = post.content %}
+{% assign date = post.date %}
+
+<div class="entry-time">{{ date | date_to_string }}</div>
+<h1>
+{% if post.title %}
+    <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
+{% endif %}
+</h1>
+<div class="entry-content">{{ content }}</div>

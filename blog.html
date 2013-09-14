@@ -1,0 +1,46 @@
+---
+layout: main
+title: lastmayday's thinking
+---
+<ul>
+　　{% for post in site.posts %}
+　　    <li>{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a>
+       </li>
+　　{% endfor %}
+</ul>
+
+<!-- Pagination links -->
+<div id="post-pagination" class="pagination">
+  {% if paginator.previous_page %}
+  <span class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="/">Previous</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}">Previous</a>
+    {% endif %}
+  </span>
+  {% endif %}
+
+  {% if paginator.total_pages > 2 %}
+  {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+  {% else %}
+      <a href="/">1</a>
+  {% endif %}
+
+  {% for count in (2..paginator.total_pages) %}
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+  {% else %}
+      <a href="/page{{count}}">{{count}}</a>
+      {% endif %}
+  {% endfor %}
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <span class="next">
+    <a href="/page{{paginator.next_page}}">Next</a>
+  </span>
+  {% endif %}
+
+</div>
