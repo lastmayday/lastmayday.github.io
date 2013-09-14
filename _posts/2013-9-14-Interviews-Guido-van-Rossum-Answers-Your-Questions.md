@@ -104,19 +104,11 @@ _有没有更好的方法呢? 你想过添加这个功能吗?_
 
 确实有更好的方法, 使用`def`关键字在local范围内定义一个正常的函数. 这个被定义的函数对象成为local变量, 这个变量有和一个lambda同样的语义, 除了它被绑定到了一个local变量, 而且它没有任何语法约束. 例如, 下面**没有**语义的不同:
 
-```python
-def make_adder(n):
-    def adder(x):
-        return x+n
-return adder
-```
+<script src="https://gist.github.com/lastmayday/6560855.js"></script>
 
 这个等价与使用lambda:
 
-```python
-def make_adder(n):
-    return lambda: x + n
-```
+<script src="https://gist.github.com/lastmayday/6560861.js"></script>
 
 (除非当你内省lambda, 需要它的名字的时候, 将会返回''而不是'adder')
 
