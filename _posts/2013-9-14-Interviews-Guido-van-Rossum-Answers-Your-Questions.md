@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Interviews: Guido van Rossum Answers Your Questions
+title: Interviews-Guido van Rossum Answers Your Questions
 ---
 
 [原文地址](http://developers.slashdot.org/firehose.pl?op=view&type=story&sid=13/08/25/2115204)
