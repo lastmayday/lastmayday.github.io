@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Why Are There So Many Pythons?
+title: Why Are There So Many Pythons
 ---
 
 [原文地址](http://www.toptal.com/python/why-are-there-so-many-pythons?)
