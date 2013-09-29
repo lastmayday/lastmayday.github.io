@@ -1,9 +1,9 @@
-*{margin:0;padding:0;}
+* {margin:0;padding:0;}
 a img {border-width: 0;vertical-align: middle;}
-a{color:#369;text-decoration:none;}
-a:visited{color:#369;text-decoration:none;}
-a:hover{color:#222;text-decoration:none;background:#eee;}
-a:active{color:#222;text-decoration:none;background:#eee;}
+a {color:#369;text-decoration:none;}
+a:visited {color:#369;text-decoration:none;}
+a:hover {color:#222;text-decoration:none;background:#eee;}
+a:active {color:#222;text-decoration:none;background:#eee;}
 
 
 body {
@@ -32,7 +32,7 @@ h1 {
   font: 2.25em 'Lato', Tahoma, Helvetica, Arial, sans-serif;
   float: left;
   width: 20%; 
-  background-color: #4E4E4E; 
+  background-color: #FFF; 
   top: 0;
   left: 0;
   bottom: 0;
@@ -41,10 +41,56 @@ h1 {
   position: fixed;
 }
 
-#sidebar ul{
-  list-style-type: none;
-  padding: 0 0 0 40px;
-  margin: 50px 0 0 0;
+#index a {
+    text-decoration: none;
+    color: #FFF; 
+    font-size: 16px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 30px 50px;
+}
+
+.home {
+    background: #E1A679;
+}
+
+.home:hover {
+    background: #FEDFE1;
+    -webkit-box-shadow: 3px 3px 3px #E1A679;
+}
+
+.about {
+    background: #F7C242; 
+}
+
+.about:hover {
+    background: #FAD689;
+    -webkit-box-shadow: 3px 3px 3px #F7C242;
+}
+
+.blog {
+    background: #268785; 
+}
+
+.blog:hover {
+    background: #A5DEE4;
+    -webkit-box-shadow: 3px 3px 3px #268785;
+}
+
+.circle:hover{
+    color: #000;
+}
+ 
+.circle span{
+    position: relative;
+    top: 40px;
+    left: 28px;
 }
 
 .content ul {
@@ -54,7 +100,7 @@ h1 {
 .site-info {
   margin: 40px 0 40px 0;
   padding: 0 0 0 40px;
-  color: #fff;
+  color: #000;
 }
 
 .sidemenu li a{
@@ -177,10 +223,10 @@ code {
 }
 
 footer {
-  clear:both;
+  clear: both;
   position: absolute;
   bottom: 0;
-  color:#fff;
+  color: #00896C;
   font-size: 14px;
   margin: 0 0 0 10px;
 }
