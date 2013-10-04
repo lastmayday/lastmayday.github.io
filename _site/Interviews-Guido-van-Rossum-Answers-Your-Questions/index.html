@@ -13,15 +13,16 @@
 　</head>
 
 　<body>
-      <div id="sidebar">
+    <div id="wrapper">
+      <aside>
         <div class="site-info">lastmayday</div>
-        <div id="index">
+        <div class="index">
           <a href="/"><div class="circle home"><span>Home</span></div></a>
           <a href="/blog.html"><div class="circle blog"><span>Blog</span></div></a>
           <a href="/about.html"><div class="circle about"><span>About</span></div></a>
         </div>
-      </div>
-      <div class="content">
+      </aside>
+      <div class="content" role="main">
           <h1>Interviews-Guido van Rossum Answers Your Questions</h1>
           <div class="info">14 September 2013</div>
           <br />
@@ -230,11 +231,12 @@
               })();
             </script>
           </div>
+      </div>
+      <footer role="contentinfo">
+        <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://pages.github.com/">Github Pages</a></p>
+        <p> &copy lastmayday 2013 | All Rights Reserved. </p>
+      </footer>
     </div>
-    <footer>
-      <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://pages.github.com/">Github Pages</a></p>
-      <p> &copy lastmayday 2013 | All Rights Reserved. </p>
-    </footer>
   </body>
 
 </html>
