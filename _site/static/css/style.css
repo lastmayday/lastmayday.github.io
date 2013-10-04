@@ -39,6 +39,7 @@ h1 {
   right: auto;
   z-index: 0;
   position: fixed;
+  text-align: center;
 }
 
 #index a {
@@ -53,7 +54,7 @@ h1 {
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    margin: 30px 50px;
+    margin: 50px auto;
 }
 
 .home {
@@ -63,6 +64,8 @@ h1 {
 .home:hover {
     background: #FEDFE1;
     -webkit-box-shadow: 3px 3px 3px #E1A679;
+    -moz-box-shadow:3px 3px 3px #E1A679;
+    box-shadow:3px 3px 3px #E1A679;
 }
 
 .about {
@@ -72,6 +75,8 @@ h1 {
 .about:hover {
     background: #FAD689;
     -webkit-box-shadow: 3px 3px 3px #F7C242;
+    -moz-box-shadow:3px 3px 3px #F7C242;
+    box-shadow:3px 3px 3px #F7C242;
 }
 
 .blog {
@@ -81,6 +86,8 @@ h1 {
 .blog:hover {
     background: #A5DEE4;
     -webkit-box-shadow: 3px 3px 3px #268785;
+    -moz-box-shadow:3px 3px 3px #268785;
+    box-shadow:3px 3px 3px #268785;
 }
 
 .circle:hover{
@@ -88,9 +95,9 @@ h1 {
 }
  
 .circle span{
-    position: relative;
-    top: 40px;
-    left: 28px;
+    display: block;
+    height: 100px;
+    line-height: 100px;
 }
 
 .content ul {
@@ -98,8 +105,8 @@ h1 {
 }
 
 .site-info {
-  margin: 40px 0 40px 0;
-  padding: 0 0 0 40px;
+  height: 60px;
+  line-height: 60px;
   color: #000;
 }
 
@@ -224,11 +231,10 @@ code {
 
 footer {
   clear: both;
-  position: absolute;
   bottom: 0;
   color: #00896C;
   font-size: 14px;
-  margin: 0 0 0 10px;
+  text-align: center;
 }
 
 .entry-time {
