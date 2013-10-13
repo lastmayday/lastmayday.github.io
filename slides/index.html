@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>HTTP</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+			      <h1>HTTP</h1>
+				  <h3>网络瞎扯</h3>
+				  <p>
+				    <small>Created by <a href="http://lastmayday.org"> lastmayday</a> / <a href="http://weibo.com/lastmayday/">@lastmayday</a></small>
+				  </p>
+				</section>
+
+                <section>
+                  <h2>What will happen if you open an URL in the browser?</h2>
+                  <ul>
+                    <li>Why the browser can get a web page?</li>
+                    <li>How does the browser know where to get the page and return back to you?</li>
+                    <li>What's the relationship between the browser and the server?</li>
+                    <li>How does the server return a dynamic-produced web content?</li>
+                    <li>...</li>
+                  </ul>
+                </section>
+
+				<section>
+                    <section>
+					  <h2>网络知识: OSI模型</h2>
+                      <p><small>开放式通信系统互联参考模型</small></p>
+					  <img src="http://i.imgur.com/T5RXuV0.jpg" />
+                    </section>
+                    <section>
+                      <h3>应用层</h3>
+                      <p>常见的协议: HTTP，HTTPS，FTP，TELNET，SSH，SMTP，POP3等</p>
+                    </section>
+                    <section>
+                      <h3>表示层</h3>
+                    </section>
+                    <section>
+                      <h3>会话层</h3>
+                    </section>
+                    <section>
+                      <h3>传输层</h3>
+                      <p>常见协议: TCP, UDP等</p>
+                    </section>
+                    <section>
+                      <h3>网络层</h3>
+                    </section>
+                    <section>
+                      <h3>数据链路层</h3>
+                    </section>
+                    <section>
+                      <h3>物理层</h3>
+                    </section>
+				</section>
+
+                <section>
+                  <section>
+                    <h2>HTTP Protocol Stack</h2>
+                    <img src="http://i.imgur.com/KDnrKMD.png" title="HTTP权威指南" />
+                  </section>
+                  <section>
+                    <h2>Basic Knowledge of HTTP</h2>
+                    <ul>
+                      <li>Client/Server</li>
+                      <li>MIME</li>
+                      <li>URI(URL/URN)</li>
+                      <li>...</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h2>URL</h2>
+                    <pre>
+                      <code data-trim>
+                        scheme://user:password@host:port/path;params?query#frag
+                      </code>
+                    </pre>
+                  </section>
+                  <section>
+                    <h3>HTTP method</h3>
+                    <ul>
+                      <li>GET</li>
+                      <li>POST</li>
+                      <li>DELETE</li>
+                      <li>PUT</li>
+                      <li>HEAD</li>
+                      <li>...</li>
+                    </ul>
+                  </section>
+                    <section>
+                      <h3>Where should we use "GET" or "POST"</h3>
+                      <p><small>Is "POST" safer than "GET"?</small></p>
+                    </section>
+                    <section>
+                      <p>区分两个概念:<b>安全</b>和<b>幂等</b></p>
+                      <p><small>这个"安全"不是密码学之类意义上的安全</small></p>
+                    </section>
+                    <section>
+                      <p><a href="http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.1" target="_blank">Form submission method</a></p>
+                       <p><a href="http://www.w3schools.com/tags/ref_httpmethods.asp">Compare GET vs. POST</a></p>
+                    </section>
+                  <section>
+                    <h3>HTTP Status Code</h3>
+                    <ul>
+                      <li>200 ok</li>
+                      <li>302 Redirect</li>
+                      <li>304 Not Modified</li>
+                      <li>404 Not Found</li>
+                      <li>500 Internal Server Error</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <h3>HTTP Headers</h3>
+                  </section>
+                  <section>
+                    <h3>URL to IP</h3>
+                    <p>DNS(Domain Name System)</p>
+                    <p><small>traceroute</small></p>
+                    <p><small>ping</small></p>
+                    <p><small>whois</small></p>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>HTTP & HTTPS</h2>
+                  </section>
+                  <section>
+                    <h3>Differences between HTTP and HTTPS</h3>
+                    <ul>
+                      <li>protocal</li>
+                      <li>port(HTTP 80, HTTPS 443)</li>
+                      <li>HTTPS is safer</li>
+                    </ul>
+                  </section>
+                  <section>
+                    <a href="http://www.ruanyifeng.com/blog/2011/02/seven_myths_about_https.html" target="_blank">HTTPS的七个误解</a>
+                  </section>
+                </section>
+ 
+                <section>
+                  <section>
+                    <h2>Cookie & Session</h2>
+                    <p><small>HTTP是无状态协议</small></p>
+                  </section>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
