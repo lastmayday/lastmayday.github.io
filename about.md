@@ -2,12 +2,14 @@
 layout: default
 title: About Here
 ---
-<br />
+
 这里打算用来记录一些Python Weekly或者其他地方看到的好文章, 自己翻译一遍也学到很多东西
 
+另外有一个Blog记录了自己学到的一些知识[lastmayday's dream](http://error404.sinaapp.com)
+
 <br />
 
-##Brief About lastmayday
+## Brief About lastmayday
 
  HUST信息安全11级本科生
 
@@ -17,7 +19,7 @@ title: About Here
 
 <br />
 
-##Contact lastmayday
+## Contact lastmayday
 
 + Gmail: **lastdayinmay@gmail.com**
 

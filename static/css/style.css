@@ -11,6 +11,7 @@ body {
   margin: 0;
   background-image: url('../img/wavegrid.png'); background-position: initial initial; background-repeat: initial initial;
   color:#333;
+  word-break: break-word;
 }
 
 ul {
@@ -117,11 +118,6 @@ aside {
   color: #000;
 }
 
-@media screen
-and (max-width: 800px){
-  .site-info {font-size: 18px;}
-}
-
 .content {
   top: 0;
   float:left;
@@ -197,6 +193,7 @@ code {
     padding: 1px 2px;
     color: #777;
     background-color: #F9F9F9;
+    width: auto;
 }
 
 footer {
@@ -209,4 +206,32 @@ footer {
 
 .entry-time {
 	float: right;
+}
+
+/************ 小屏显示 ***************/
+
+@media screen
+and (max-width: 800px){
+  aside {
+      position: relative;
+      display: block;
+	  height: auto;
+      width: 100%;
+      max-width: 100%;
+      background: transparent;
+  }
+
+  .circle {
+	  width: 33.333333%;
+      margin: auto;
+      float: left;
+      -moz-border-radius: 0;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+  }
+
+  .content {
+	  margin: 20px 5px;
+      width: 100%;
+  }
 }
