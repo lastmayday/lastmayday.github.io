@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>HTTP</title>
+		<title>Python Introspection</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -37,147 +37,221 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-			      <h1>HTTP</h1>
-				  <h3>网络瞎扯</h3>
+			      <h1>Python Introspection</h1>
+				  <h3>Examine the type or properties of an object at runtime</h3>
 				  <p>
 				    <small>Created by <a href="http://lastmayday.org"> lastmayday</a> / <a href="http://weibo.com/lastmayday/">@lastmayday</a></small>
 				  </p>
 				</section>
 
                 <section>
-                  <h2>What will happen if you open an URL in the browser?</h2>
+                  <h2>What is "Type introspection" ?</h2>
                   <ul>
-                    <li>Why the browser can get a web page?</li>
-                    <li>How does the browser know where to get the page and return back to you?</li>
-                    <li>What's the relationship between the browser and the server?</li>
-                    <li>How does the server return a dynamic-produced web content?</li>
-                    <li>...</li>
+                    <li><a href="http://en.wikipedia.org/wiki/Type_introspection" target="_blank">维基百科</a></li>
+                    <li>内省/自我检查</li>
                   </ul>
                 </section>
 
 				<section>
                     <section>
-					  <h2>网络知识: OSI模型</h2>
-                      <p><small>开放式通信系统互联参考模型</small></p>
-					  <img src="http://i.imgur.com/T5RXuV0.jpg" />
+					  <h2>Why Use Introspection?</h2>
+                      <ul>
+                        <li>判断某个变量是什么类型</li>
+                        <li>检查某个类的属性</li>
+                        <li>...</li>
+                      </ul>
                     </section>
                     <section>
-                      <h3>应用层</h3>
-                      <p>常见的协议: HTTP，HTTPS，FTP，TELNET，SSH，SMTP，POP3等</p>
-                    </section>
-                    <section>
-                      <h3>表示层</h3>
-                    </section>
-                    <section>
-                      <h3>会话层</h3>
-                    </section>
-                    <section>
-                      <h3>传输层</h3>
-                      <p>常见协议: TCP, UDP等</p>
-                    </section>
-                    <section>
-                      <h3>网络层</h3>
-                    </section>
-                    <section>
-                      <h3>数据链路层</h3>
-                    </section>
-                    <section>
-                      <h3>物理层</h3>
+                      <h3>To Be Brief</h3>
+                      <p>内省可以让我们在代码运行的时候动态地判断某个对象的属性而使代码具有灵活性</p>
                     </section>
 				</section>
 
                 <section>
                   <section>
-                    <h2>HTTP Protocol Stack</h2>
-                    <img src="http://i.imgur.com/KDnrKMD.png" title="HTTP权威指南" />
+                    <h2>How To Use Introspection?</h2>
                   </section>
                   <section>
-                    <h2>Basic Knowledge of HTTP</h2>
+                    <h2>Use build-in functions</h2>
                     <ul>
-                      <li>Client/Server</li>
-                      <li>MIME</li>
-                      <li>URI(URL/URN)</li>
+                      <li>type()</li>
+                      <li>dir()</li>
+                      <li>isinstance()</li>
+                      <li>id()</li>
+                      <li>getattr()</li>
+                      <li>hasattr()</li>
                       <li>...</li>
                     </ul>
                   </section>
                   <section>
-                    <h2>URL</h2>
+                    <h2>Example 1</h2>
                     <pre>
-                      <code data-trim>
-                        scheme://user:password@host:port/path;params?query#frag
+                      <code class="python">
+In [1]: class Duck(object):
+   ...:     def __init__(self, name):
+   ...:         self.name = name
+   ...:     def quack(self):
+   ...:         print("%s is quacking." % self.name)
+   ...:         
+
+In [2]: dir(Duck)
+Out[2]: 
+['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__le__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'quack']
+
+In [3]: duck_a = Duck("A")
+
+In [5]: duck_a.quack()
+A is quacking.
+
+In [6]: id(duck_a)
+Out[6]: 3059151500
+
+In [7]: duck_b = duck_a
+
+In [8]: id(duck_b)
+Out[8]: 3059151500
+
+In [9]: duck_c = Duck("C")
+
+In [10]: id(duck_c)
+Out[10]: 3059174796
+
+In [11]: duck_b.name = "B"
+
+In [12]: duck_a.quack()
+B is quacking.
                       </code>
                     </pre>
                   </section>
                   <section>
-                    <h3>HTTP method</h3>
-                    <ul>
-                      <li>GET</li>
-                      <li>POST</li>
-                      <li>DELETE</li>
-                      <li>PUT</li>
-                      <li>HEAD</li>
-                      <li>...</li>
-                    </ul>
-                  </section>
-                    <section>
-                      <h3>Where should we use "GET" or "POST"</h3>
-                      <p><small>Is "POST" safer than "GET"?</small></p>
-                    </section>
-                    <section>
-                      <p>区分两个概念:<b>安全</b>和<b>幂等</b></p>
-                      <p><small>这个"安全"不是密码学之类意义上的安全</small></p>
-                    </section>
-                    <section>
-                      <p><a href="http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.1" target="_blank">Form submission method</a></p>
-                       <p><a href="http://www.w3schools.com/tags/ref_httpmethods.asp">Compare GET vs. POST</a></p>
-                    </section>
-                  <section>
-                    <h3>HTTP Status Code</h3>
-                    <ul>
-                      <li>200 ok</li>
-                      <li>302 Redirect</li>
-                      <li>304 Not Modified</li>
-                      <li>404 Not Found</li>
-                      <li>500 Internal Server Error</li>
-                    </ul>
+                    <h2>Example 2</h2>
+                    <pre>
+                      <code class="python">
+In [13]: class A(object):
+   ....:     pass
+   ....: 
+
+In [14]: class B(A):
+   ....:     pass
+   ....: 
+
+In [15]: isinstance(A(), A)
+Out[15]: True
+
+In [16]: type(A()) == A
+Out[16]: True
+
+In [17]: isinstance(B(), A)
+Out[17]: True
+
+In [18]: type(B()) == A
+Out[18]: False
+
+                      </code>
+                    </pre>
                   </section>
                   <section>
-                    <h3>HTTP Headers</h3>
+                    <h2>Write Your Own Functions</h2>                  
                   </section>
                   <section>
-                    <h3>URL to IP</h3>
-                    <p>DNS(Domain Name System)</p>
-                    <p><small>traceroute</small></p>
-                    <p><small>ping</small></p>
-                    <p><small>whois</small></p>
+                    <h2>Examples</h2>
+                    <pre>
+                      <code class="python">
+In [1]: class Foo(object):
+   ...:     def __init__(self, val):
+   ...:         self.value = val
+   ...:         
+
+In [2]: foo = Foo('test')
+
+In [3]: foo.value
+Out[3]: 'test'
+
+In [4]: foo.__dir__()
+Out[4]: 
+['__setattr__',
+ '__reduce_ex__',
+ '__new__',
+ '__getattribute__',
+ '__format__',
+ '__class__',
+ 'value',
+ '__delattr__',
+ '__le__',
+ '__repr__',
+ '__hash__',
+ '__doc__',
+ '__ge__',
+ '__ne__',
+ '__module__',
+ '__eq__',
+ '__str__',
+ '__reduce__',
+ '__subclasshook__',
+ '__dir__',
+ '__gt__',
+ '__dict__',
+ '__sizeof__',
+ '__weakref__',
+ '__lt__',
+ '__init__']
+
+In [5]: class Bar(object):
+   ...:     def __init__(self, val):
+   ...:         self.val = val
+   ...:     def __dir__(self):
+   ...:         print(self.val)
+   ...:         
+
+In [6]: bar = Bar("test")
+
+In [7]: bar.val
+Out[7]: 'test'
+
+In [8]: bar.__dir__()
+test
+                      </code>
+                    </pre>
                   </section>
                 </section>
 
                 <section>
-                  <section>
-                    <h2>HTTP & HTTPS</h2>
-                  </section>
-                  <section>
-                    <h3>Differences between HTTP and HTTPS</h3>
+                    <h2>References</h2>
                     <ul>
-                      <li>protocal</li>
-                      <li>port(HTTP 80, HTTPS 443)</li>
-                      <li>HTTPS is safer</li>
+                      <li><a href="http://www.diveintopython.net/power_of_introspection/index.html" target="_blank">Dive Into Python - Chapter 4. The Power Of Introspection</a></li>
+                      <li><a href="http://www.ibm.com/developerworks/cn/linux/l-pyint/index1.html" target="_blank">Python 自省指南</a></li>
                     </ul>
-                  </section>
-                  <section>
-                    <a href="http://www.ruanyifeng.com/blog/2011/02/seven_myths_about_https.html" target="_blank">HTTPS的七个误解</a>
-                  </section>
                 </section>
- 
+
                 <section>
-                  <section>
-                    <h2>Cookie & Session</h2>
-                    <p><small>HTTP是无状态协议</small></p>
-                  </section>
+                  <h2>Thank you</h2>
                 </section>
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

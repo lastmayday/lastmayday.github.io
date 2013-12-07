@@ -193,7 +193,6 @@ code {
     padding: 1px 2px;
     color: #777;
     background-color: #F9F9F9;
-    width: auto;
 }
 
 footer {
@@ -222,8 +221,8 @@ and (max-width: 800px){
   }
 
   .circle {
-	  width: 33.333333%;
-      margin: auto;
+	  width: 33.33333333%;
+      margin: 0;
       float: left;
       -moz-border-radius: 0;
       -webkit-border-radius: 0;
@@ -233,5 +232,9 @@ and (max-width: 800px){
   .content {
 	  margin: 20px 5px;
       width: 100%;
+  }
+
+  .entry-time {
+	  float: none;
   }
 }
