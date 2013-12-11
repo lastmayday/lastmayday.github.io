@@ -84,7 +84,7 @@
                     </ul>
                   </section>
                   <section>
-                    <h2>Examples</h2>
+                    <h2>Example 1</h2>
                     <pre>
                       <code class="python">
 In [1]: class Duck(object):
@@ -148,33 +148,110 @@ B is quacking.
                       </code>
                     </pre>
                   </section>
+                  <section>
+                    <h2>Example 2</h2>
+                    <pre>
+                      <code class="python">
+In [13]: class A(object):
+   ....:     pass
+   ....: 
+
+In [14]: class B(A):
+   ....:     pass
+   ....: 
+
+In [15]: isinstance(A(), A)
+Out[15]: True
+
+In [16]: type(A()) == A
+Out[16]: True
+
+In [17]: isinstance(B(), A)
+Out[17]: True
+
+In [18]: type(B()) == A
+Out[18]: False
+
+                      </code>
+                    </pre>
+                  </section>
+                  <section>
+                    <h2>Write Your Own Functions</h2>                  
+                  </section>
+                  <section>
+                    <h2>Examples</h2>
+                    <pre>
+                      <code class="python">
+In [1]: class Foo(object):
+   ...:     def __init__(self, val):
+   ...:         self.value = val
+   ...:         
+
+In [2]: foo = Foo('test')
+
+In [3]: foo.value
+Out[3]: 'test'
+
+In [4]: foo.__dir__()
+Out[4]: 
+['__setattr__',
+ '__reduce_ex__',
+ '__new__',
+ '__getattribute__',
+ '__format__',
+ '__class__',
+ 'value',
+ '__delattr__',
+ '__le__',
+ '__repr__',
+ '__hash__',
+ '__doc__',
+ '__ge__',
+ '__ne__',
+ '__module__',
+ '__eq__',
+ '__str__',
+ '__reduce__',
+ '__subclasshook__',
+ '__dir__',
+ '__gt__',
+ '__dict__',
+ '__sizeof__',
+ '__weakref__',
+ '__lt__',
+ '__init__']
+
+In [5]: class Bar(object):
+   ...:     def __init__(self, val):
+   ...:         self.val = val
+   ...:     def __dir__(self):
+   ...:         print(self.val)
+   ...:         
+
+In [6]: bar = Bar("test")
+
+In [7]: bar.val
+Out[7]: 'test'
+
+In [8]: bar.__dir__()
+test
+                      </code>
+                    </pre>
+                  </section>
                 </section>
 
                 <section>
-                  <section>
-                    <h2>HTTP & HTTPS</h2>
-                  </section>
-                  <section>
-                    <h3>Differences between HTTP and HTTPS</h3>
+                    <h2>References</h2>
                     <ul>
-                      <li>protocal</li>
-                      <li>port(HTTP 80, HTTPS 443)</li>
-                      <li>HTTPS is safer</li>
+                      <li><a href="http://www.diveintopython.net/power_of_introspection/index.html" target="_blank">Dive Into Python - Chapter 4. The Power Of Introspection</a></li>
+                      <li><a href="http://www.ibm.com/developerworks/cn/linux/l-pyint/index1.html" target="_blank">Python 自省指南</a></li>
                     </ul>
-                  </section>
-                  <section>
-                    <a href="http://www.ruanyifeng.com/blog/2011/02/seven_myths_about_https.html" target="_blank">HTTPS的七个误解</a>
-                  </section>
                 </section>
- 
+
                 <section>
-                  <section>
-                    <h2>Cookie & Session</h2>
-                    <p><small>HTTP是无状态协议</small></p>
-                  </section>
+                  <h2>Thank you</h2>
                 </section>
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
