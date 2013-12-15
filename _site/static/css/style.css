@@ -230,7 +230,7 @@ footer {
 /************ 小屏显示 ***************/
 
 @media screen
-and (max-width: 800px){
+and (max-width: 930px){
   aside {
       position: relative;
       display: block;
@@ -241,7 +241,7 @@ and (max-width: 800px){
   }
 
   .circle {
-	  width: 33.33333333%;
+	  width: 25%;
       margin: 0;
       float: left;
       -moz-border-radius: 0;
