@@ -7,19 +7,17 @@ title: About Here
 
 另外有一个Blog记录了自己学到的一些知识[lastmayday's dream](http://error404.sinaapp.com)
 
-<br />
+<br>
 
-## Brief About lastmayday
+## Brief About
 
  HUST信息安全11级本科生
 
- 嫌弃麻烦偶尔抽风非文艺女码农一枚
+ 嫌弃麻烦偶尔抽风非文艺代码为生不靠谱女青年一枚
 
- 正在努力学习写优美简洁的代码
+<br>
 
-<br />
-
-## Contact lastmayday
+## Contact
 
 + Gmail: **lastdayinmay@gmail.com**
 
@@ -29,4 +27,4 @@ title: About Here
 
 + [豆瓣](http://www.douban.com/people/lastmayday/ "豆瓣")
 
-<br />
+<br>

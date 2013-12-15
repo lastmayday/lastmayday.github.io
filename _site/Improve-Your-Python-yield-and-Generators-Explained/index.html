@@ -23,6 +23,7 @@
           <a href="/"><div class="circle home"><span>Home</span></div></a>
           <a href="/blog.html"><div class="circle blog"><span>Blog</span></div></a>
           <a href="/about.html"><div class="circle about"><span>About</span></div></a>
+          <a href="/link.html"><div class="circle link"><span>Link</span></div></a>
         </div>
       </aside>
       <div class="content" role="main">
@@ -37,7 +38,7 @@
 
 <p><br /></p>
 
-<p>很多学生反馈说理解<code>generators</code>和<code>yield</code>关键字有困难, 即使已经很努力地让他们自己理解这个话题. 我想改变这种情况. 在这篇文章中, 我会解释<code>yield</code>关键字是_什么_, 它_为什么_有用, 以及_怎样_使用它.</p>
+<p>很多学生反馈说理解<code>generators</code>和<code>yield</code>关键字有困难, 即使已经很努力地让他们自己理解这个话题. 我想改变这种情况. 在这篇文章中, 我会解释<code>yield</code>关键字是 <em>什么</em> , 它 <em>为什么</em> 有用, 以及 <em>怎样</em> 使用它.</p>
 
 <p><br /></p>
 
@@ -57,7 +58,7 @@
 
 <p><br /></p>
 
-<p>我说, “生成一系列的值”因为我们的假想函数并不以常规思维”返回”. <code>return</code>意味着这个函数把_执行权限返回_给了这个函数调用的地方. 但是”yield”意味着_执行权的转换是暂时的并且自愿的_, 而且我们的函数期望在未来再一次得到执行权.</p>
+<p>我说, “生成一系列的值”因为我们的假想函数并不以常规思维”返回”. <code>return</code>意味着这个函数把_执行权限返回_给了这个函数调用的地方. 但是”yield”意味着 <em>执行权的转换是暂时的并且自愿的</em> , 而且我们的函数期望在未来再一次得到执行权.</p>
 
 <p><br /></p>
 
@@ -81,7 +82,7 @@
 
 <p><br /></p>
 
-<p>_记住, 一个<a href="http://docs.python.org/3/glossary.html#term-iterable">可迭代对象</a>只是一个可以一次返回它的成员的对象.</p>
+<p><em>记住, 一个<a href="http://docs.python.org/3/glossary.html#term-iterable">可迭代对象</a>只是一个可以一次返回它的成员的对象.</em></p>
 
 <p><br /></p>
 
@@ -132,7 +133,7 @@ def is_prime(number):
 
 <p><br /></p>
 
-<p>一旦我们思考了这个新的需求, 就会发现它不仅仅是要简单地修改<code>get_primes</code>. 明显地, 我们不能返回一个从<code>start</code>开始到无穷大的素数列表(<em>但是处理无穷序列有着非常广泛的应用</em>). 用常规函数来解决这个问题看起来不大可能.</p>
+<p>一旦我们思考了这个新的需求, 就会发现它不仅仅是要简单地修改<code>get_primes</code>. 明显地, 我们不能返回一个从<code>start</code>开始到无穷大的素数列表( <em>但是处理无穷序列有着非常广泛的应用</em> ). 用常规函数来解决这个问题看起来不大可能.</p>
 
 <p><br /></p>
 

@@ -62,7 +62,7 @@ aside {
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    margin: 20% auto;
+    margin: 12% auto;
 }
 
 .home {
@@ -74,6 +74,18 @@ aside {
     -webkit-box-shadow: 3px 3px 3px #E1A679;
     -moz-box-shadow:3px 3px 3px #E1A679;
     box-shadow:3px 3px 3px #E1A679;
+}
+
+.link {
+    background: #227D51; 
+
+}
+
+.link:hover {
+    background: #5DAC81;
+    -webkit-box-shadow: 3px 3px 3px #227D51;
+    -moz-box-shadow: 3px 3px 3px #227D51;
+    box-shadow: 3px 3px 3px #227D51;
 }
 
 .about {
@@ -141,7 +153,7 @@ aside {
   color: #3DA0A0;
 }
 .content h2 {
-  font-size: 16px;
+  font-size: 18px;
   color: #3DA0A0;  
 }
 .content h2 a {
@@ -154,7 +166,10 @@ aside {
   padding-left:4px;
   background-color:#fff;
 }
-
+.content h3 {
+  font-size: 16px;
+  color: #3DA0A0;  
+}
 
 .info {
   word-wrap: break-word; 

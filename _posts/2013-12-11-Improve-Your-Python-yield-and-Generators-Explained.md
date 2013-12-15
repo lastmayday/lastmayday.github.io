@@ -11,7 +11,7 @@ title: Improve Your Python - 'yield' and Generators Explained
 
 <br>
 
-很多学生反馈说理解`generators`和`yield`关键字有困难, 即使已经很努力地让他们自己理解这个话题. 我想改变这种情况. 在这篇文章中, 我会解释`yield`关键字是_什么_, 它_为什么_有用, 以及_怎样_使用它.
+很多学生反馈说理解`generators`和`yield`关键字有困难, 即使已经很努力地让他们自己理解这个话题. 我想改变这种情况. 在这篇文章中, 我会解释`yield`关键字是 _什么_ , 它 _为什么_ 有用, 以及 _怎样_ 使用它.
 
 <br>
 
@@ -31,7 +31,7 @@ title: Improve Your Python - 'yield' and Generators Explained
 
 <br>
 
-我说, "生成一系列的值"因为我们的假想函数并不以常规思维"返回". `return`意味着这个函数把_执行权限返回_给了这个函数调用的地方. 但是"yield"意味着_执行权的转换是暂时的并且自愿的_, 而且我们的函数期望在未来再一次得到执行权.
+我说, "生成一系列的值"因为我们的假想函数并不以常规思维"返回". `return`意味着这个函数把_执行权限返回_给了这个函数调用的地方. 但是"yield"意味着 _执行权的转换是暂时的并且自愿的_ , 而且我们的函数期望在未来再一次得到执行权.
 
 <br>
 
@@ -55,7 +55,7 @@ title: Improve Your Python - 'yield' and Generators Explained
 
 <br>
 
-_记住, 一个[可迭代对象](http://docs.python.org/3/glossary.html#term-iterable)只是一个可以一次返回它的成员的对象.
+_记住, 一个[可迭代对象](http://docs.python.org/3/glossary.html#term-iterable)只是一个可以一次返回它的成员的对象._
 
 <br>
 
@@ -106,7 +106,7 @@ def is_prime(number):
 
 <br>
 
-一旦我们思考了这个新的需求, 就会发现它不仅仅是要简单地修改`get_primes`. 明显地, 我们不能返回一个从`start`开始到无穷大的素数列表(_但是处理无穷序列有着非常广泛的应用_). 用常规函数来解决这个问题看起来不大可能.
+一旦我们思考了这个新的需求, 就会发现它不仅仅是要简单地修改`get_primes`. 明显地, 我们不能返回一个从`start`开始到无穷大的素数列表( _但是处理无穷序列有着非常广泛的应用_ ). 用常规函数来解决这个问题看起来不大可能.
 
 <br>
 
