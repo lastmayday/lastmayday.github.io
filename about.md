@@ -9,6 +9,14 @@ title: About Here
 
 <br>
 
+<div class="face">
+  <div class="eye left"></div>
+  <div class="eye right"></div>
+  <div class="mouse smile"></div>
+</div>
+
+<br>
+
 ## Brief About
 
  HUST信息安全11级本科生

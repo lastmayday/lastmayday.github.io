@@ -258,3 +258,59 @@ and (max-width: 930px){
 	  float: none;
   }
 }
+
+/* 卖萌用 */
+
+.face {
+  width: 80px;
+  height: 80px;
+  background: #FEDFE1;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 3px 3px #E1A679;
+  -moz-box-shadow: 3px 3px 3px #E1A679;
+  box-shadow: 3px 3px 3px #E1A679; 
+}
+
+.eye {
+  width: 16px;
+  height: 16px;
+  background: #373C38;
+  border-radius: 8px; 
+  display: inline;
+  position: relative;
+  top: 24px;
+}
+
+.left {
+  float:  left;
+  left: 18px;
+}
+
+.right {
+  float: right;
+  right: 18px;
+}
+
+.mouse {
+  width: 40px;
+  height: 30px;
+  border-bottom: 5px #CB4042 solid;
+  position: relative;
+  top: 25px;
+  left: 20px;
+}
+
+.smile {
+  border-radius: 0; 
+}
+
+.face:hover .smile{
+  border-radius: 25px / 20px;
+}
+
+.face:hover .eye{
+  background: none;
+  border-top: 4px #373C38 solid; 
+}
