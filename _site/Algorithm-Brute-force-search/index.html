@@ -4,7 +4,7 @@
 　　 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 　　 <title>
-               Friends
+               算法笔记-暴搜
            
     </title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -27,40 +27,79 @@
         </div>
       </aside>
       <div class="content" role="main">
-          <h1>Friends</h1>
-          <div class="info"></div>
+          <h1>算法笔记-暴搜</h1>
+          <div class="info">19 January 2014</div>
           <br />
-          <p><a href="http://couragej.github.io/">courageJ</a></p>
+          <p>这篇终于不是翻译了&gt;&lt;</p>
 
-<p><small>写代码的女青年~(勾搭请联系我独家提供各种资料!</small></p>
+<p>想想还是把最近在看的一些算法和题目记下来(好记性不如烂笔头嘛</p>
 
-<p><br /></p>
+<p>最近在看的一本算法书叫”挑战程序设计竞赛”, <a href="http://book.douban.com/subject/24749842/">豆瓣链接</a></p>
 
-<p><a href="http://linusp.github.io/">Linusp</a></p>
-
-<p><small>小婷婷你好还欠我礼物!</small></p>
+<h2 id="ants">Ants</h2>
 
 <p><br /></p>
 
-<p><a href="http://houkanshan.github.io/">灭灭</a></p>
-
-<p><small>( &gt;﹏&lt;。)</small></p>
+<p><a href="http://poj.org/problem?id=1852">题目链接</a></p>
 
 <p><br /></p>
 
-<p><a href="http://cadl.github.io/">Cadl</a></p>
+<p>题目翻译:</p>
+
+<p>n只蚂蚁以每秒1cm的速度在长为Lcm的竿子上爬行. 当蚂蚁爬到竿子的端点时就会掉落. 由于竿子太细, 两只蚂蚁相遇时, 它们不能交错通过, 只能各自反响爬回去. 对于每只蚂蚁, 我们知道它距离竿子左端的距离x<sub>i</sub>, 但不知道它的当前朝向. 请计算所有蚂蚁落下竿子所需的最短时间和最长时间.</p>
 
 <p><br /></p>
 
-<p><a href="http://frellica.sinaapp.com/">刘小懒</a></p>
+<p>每只蚂蚁开始的朝向都有两种, n只蚂蚁就是2<sup>n</sup>种. 如果用暴搜的话时间开销很大.</p>
+
+<p>考虑下蚂蚁相遇的时候, 如果不考虑两只蚂蚁的不同, 其实反向与否没有关系. <strong>对两只蚂蚁消耗的时间来说, 反向和没有反向继续往前走是一样的</strong>. 这样就可以认为每只蚂蚁是独立活动的, 求出最短和最长时间就可以了.</p>
 
 <p><br /></p>
 
-<p><a href="http://liuyufamily.com/">许多鱼</a></p>
+<p>POJ1852的参考C++代码如下(C++新手请多多指教&gt;&lt;):</p>
+
+<script src="https://gist.github.com/8504414.js"> </script>
 
 <p><br /></p>
 
-<p><a href="http://www.cnblogs.com/monxue/">薛大婶</a></p>
+<h2 id="bfs">深度优先搜索(BFS)</h2>
+
+<p><br /></p>
+
+<h3 id="section">部分和问题</h3>
+
+<p><br /></p>
+
+<p>题目:</p>
+
+<p>给定整数a1, a2, …, an, 判断是否可以从中选出若干数, 使它们的和恰好为k.</p>
+
+<p><br /></p>
+
+<p>考虑下面的例子:</p>
+
+<p>n = 4</p>
+
+<p>a = {1, 2, 4, 7}</p>
+
+<p>k = 13</p>
+
+<p>输出: Yes</p>
+
+<p><br />
+然后考虑下面的图片:</p>
+
+<p><img src="http://i.imgur.com/NjBA5zf.jpg" alt="部分和实例图片" /></p>
+
+<p><br /></p>
+
+<p>从图片可以很清晰地看到, 对于数组中的每一个数字, 我们有两种选择即加或不加. 那么我们可以用递归, 从第一个数开始遍历, 如果加的次数达到了就返回sum == k, 判断结果是否是想要的结果.</p>
+
+<p><br /></p>
+
+<p>参考C++代码如下:</p>
+
+<script src="https://gist.github.com/8504433.js"> </script>
 
 <p><br /></p>
 
@@ -68,6 +107,8 @@
           <div class="tags">
             <span>标签: </span>
             <ul>
+            
+              <li>Algorithm</li>
             
             </ul>
           </div>

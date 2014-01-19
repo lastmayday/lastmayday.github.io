@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Improve Your Python - Understanding Unit Testing
+tags: ["Python", "Unit Testing"]
 ---
 
 [原文地址](http://jeffknupp.com/blog/2013/12/09/improve-your-python-understanding-unit-testing/)

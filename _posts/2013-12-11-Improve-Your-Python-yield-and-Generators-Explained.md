@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Improve Your Python - 'yield' and Generators Explained
+tags: Python Generators
 ---
 
 [原文地址](http://www.jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)

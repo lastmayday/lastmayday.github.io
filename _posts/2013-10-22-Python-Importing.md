@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Python Importing
+tags: Python Import
 ---
 
 [原文地址](http://blog.amir.rachum.com/post/63666832095/python-importing)

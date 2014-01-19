@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Archlinux /srv/http vs Debian /var/www
+tags: Linux
 ---
 
 [原文地址](http://www.wulf.co.nz/archlinux-srvhttp-vs-debian-varwww/)

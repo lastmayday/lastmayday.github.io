@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Improve Your Python - Decorators Explained
+tag: Python Decorators
 ---
 
 [原文地址](http://www.jeffknupp.com/blog/2013/11/29/improve-your-python-decorators-explained/)

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Understanding Threads in Python
+tags: Python Threads
 ---
 
 [原文地址](http://agiliq.com/blog/2013/09/understanding-threads-in-python/)
