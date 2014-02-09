@@ -19,6 +19,8 @@ title: About Here
 
 ## Brief About
 
+<br>
+
  HUST信息安全11级本科生
 
  嫌弃麻烦偶尔抽风非文艺代码为生不靠谱女青年一枚
@@ -27,12 +29,14 @@ title: About Here
 
 ## Contact
 
-+ Gmail: **lastdayinmay@gmail.com**
+<br>
 
-+ [GitHub](https://github.com/lastmayday "GitHub")
-
-+ [新浪微博](http://weibo.com/lastmayday "新浪微博")
-
-+ [豆瓣](http://www.douban.com/people/lastmayday/ "豆瓣")
+<div class='metro-social'>
+  <li><a class="dou" href="http://www.douban.com/people/lastmayday/" target="_blank"></a></li>
+  <li><a class="git" href="https://github.com/lastmayday" target="_blank"></a>
+  <li><a class="gp" href="https://plus.google.com/+lastmaydayHuang" target="_blank"></a></li>
+  <li><a class="wb" href="http://weibo.com/lastmayday/" target="_blank"></a></li>
+  <li><a class="in" href="http://instagram.com/lastmayday" target="_blank"></a></li>
+</div>
 
 <br>

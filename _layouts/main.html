@@ -12,6 +12,7 @@
     </title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/static/css/style.css"/>
     <link rel="stylesheet" href="/static/css/github.css"/>
     <script src="/static/js/highlight.pack.js"></script>
@@ -33,6 +34,17 @@
 
       <div class="content" role="main">
         {{ content }}
+
+        {% if site.posts.first.tags %}
+          <div class="tags">
+            <span>标签: </span>
+            <ul>
+            {% for tag in site.posts.first.tags %}
+              <li>{{ tag }}</li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
     
         <div class="google-analytics">
           <script type="text/javascript">
