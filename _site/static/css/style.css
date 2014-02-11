@@ -9,7 +9,7 @@ body {
   font: 16px/1.5 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
-  background-image: url('../img/wavegrid.png'); background-position: initial initial; background-repeat: initial initial;
+  background-image: url('../img/wavegrid.png'); background-position: initial; background-repeat: initial;
   color:#333;
   word-break: break-word;
 }
@@ -209,7 +209,6 @@ blockquote{
 }
 
 code {
-    border: 1px dashed #ddd;
     border-radius: 5px;
     padding: 1px 2px;
     color: #F04747;
