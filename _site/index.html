@@ -15,6 +15,21 @@
     <link rel="stylesheet" href="/static/css/monokai.css">
     <script src="/static/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <!-- mathjax config similar to math.stackexchange -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 　</head>
 
 　<body>
@@ -35,183 +50,103 @@
 
 
 
-<div class="entry-time">11 Feb 2014</div>
+<div class="entry-time">27 Feb 2014</div>
 <h1>
 
-    <a href="/Improve-Your-Python-Metaclasses-and-Dynamic-Classes-With-Type">Improve Your Python - Metaclasses and Dyanamic Classes With Types</a>
+    <a href="/Algorithm-Dynamic-Programming">算法笔记-动态规划</a>
 
 </h1>
-<div class="entry-content"><p><a href="http://www.jeffknupp.com/blog/2013/12/28/improve-your-python-metaclasses-and-dynamic-classes-with-type/">原文链接</a></p>
+<div class="entry-content"><p>DP好难啊…T_T</p>
+
+<p>智商不够只能慢慢看了…T_T</p>
 
 <p><br /></p>
 
-<p><code>metaclasses</code> 和 <code>type</code> 关键字都很少被使用到(因此并没有很好地被大多数Python构造理解). 在这篇文章中, 我们将会探索不同类型的<code>type()</code>以及怎么使用鲜为人知的与<code>metaclasses</code>相关的<code>type</code>的使用.</p>
+<h2 id="section">背包问题</h2>
 
 <p><br /></p>
 
-<h2 id="type">你是我的菜(type)吗?</h2>
+<p>先把<a href="http://cuitianyi.com/blog/%E3%80%8A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%B9%9D%E8%AE%B2%E3%80%8B2-0-alpha1/">背包九讲</a>放在这里镇着.</p>
+
+<h3 id="section-1">01背包问题</h3>
 
 <p><br /></p>
 
-<p><code>type()</code>的第一种用法就是最广为人知的: 决定一个对象的类型. 这里, Python初学者通常会打断并且说: “但是我以为Python没有类型呢!” 相反, Python里的 <em>任何东西</em> 都是有类型的(即使是<code>type</code>!) 因为 <em>任何东西</em> 都是一个对象. 让我们看几个例子:</p>
-<pre>
-<code class="python">
-&gt;&gt;&gt; type(1)
-&lt;class 'int'&gt;
-&gt;&gt;&gt; type('foo')
-&lt;class 'str'&gt;
-&gt;&gt;&gt; type(3.0)
-&lt;class 'float'&gt;
-&gt;&gt;&gt; type(float)
-&lt;class 'type'&gt;
-</code>
-</pre>
+<blockquote>
+  <p>有n个重量和价值分别为w<sub>i</sub>, v<sub>i</sub>的物品. 从这些物品中挑出总重量不超过W的物品. 问能挑出的最大价值为多少.</p>
+</blockquote>
 
 <p><br /></p>
 
-<h3 id="type-1"><code>type</code>的类型</h3>
+<p>最容易想到的方法是对每一个物品是否放入背包试一下.</p>
+
+<script src="https://gist.github.com/9247240.js"> </script>
 
 <p><br /></p>
 
-<p>一切都和预期的一样, 直到我们检查了<code>float</code>的类型. <code>&lt;class 'type'&gt;</code>? 这是什么? 好吧, 很奇怪, 但是让我们继续:</p>
-<pre>
-<code class="python">
-&gt;&gt;&gt; class Foo(object):
-...     pass
-...
-&gt;&gt;&gt; type(Foo)
-&lt;class 'type'&gt;
-</code>
-</pre>
+<p>DP中貌似分析出状态转移方程是很重要的.(就像高中数学的递推表达式…</p>
 
-<p>啊! 又是<code>&lt;class 'type'&gt;</code>. 显然所有类自己的类型都是<code>type</code>(不管它们是内置的还是用户定义的类). 那<code>type</code>自己的类型是什么呢?</p>
-<pre>
-<code class="python">
-&gt;&gt;&gt; type(type)
-&lt;class 'type'&gt;
-</code>
-</pre>
+<p>那么分析一下这个问题的状态转移. 假定有dp[i][j]表示从前i个物品中选出总重量不超过j的物品时的最大价值. 很显然dp[0][j] = 0. 对于任一i, j, 如果w[i] &gt; j那么dp[i+1][j] = dp[i][j], 否则dp[i+1][j] = max(dp[i][j], dp[i][j-w[i]] + v[i]). 公式如下:</p>
 
-<p>好吧, 它不得不在某个地方结束. <code>type</code>是所有类型的类型, 包括它自己. 实际上, <code>type</code>是一个<code>metaclass</code>(元类), 或者说是”一个构造类的东西”. 类, 就像<code>list()</code>使用<code>my_list = list()</code>这样, 构造那个类的实例. 同样的, <code>metaclasses</code>构造类型, 就像<code>Foo</code>这样:</p>
-<pre>
-<code class="python">
-class Foo(object):
-    pass
-</code>
-</pre>
+<script type="math/tex; mode=display">% <![CDATA[
+
+
+dp[i+1][j] = \left\{ \begin{array}{ll}
+dp[i][j] & \textrm{$j<w[i]$}\\
+max(dp[i][j], dp[i][j-w[i]] + v[i]) & \textrm{$j>=w[i]$}
+\end{array} \right.
+
+ %]]></script>
 
 <p><br /></p>
 
-<h3 id="section">构造你自己的元类</h3>
+<p>参考代码:</p>
+
+<script src="https://gist.github.com/9247948.js"> </script>
 
 <p><br /></p>
 
-<p>和正常的类一样, <code>metaclasses</code>可以是用户自己定义的. 为了使用这样的元类, 你可以把一个类的<code>__metaclass__</code>属性设置为你自己构造的<code>metaclass</code>. 一个<code>metaclass</code>可以是任何调用, 只要它返回一个类型. 通常, 你会指定一个类的<code>__metaclass__</code>为一个函数, 这样在某些时候就可以使用我们还没有讨论到的<code>type</code>的一个变体: 使用三个参数来创建类.</p>
+<h3 id="section-2">完全背包问题</h3>
 
 <p><br /></p>
 
-<h2 id="type-2"><code>type</code>的阴暗面</h2>
+<blockquote>
+  <p>有n种重量和价值分别为w<sub>i</sub>, v<sub>i</sub>的物品. 从中挑选总重量不超过W的物品, 求价值总和的最大值. 每种物品可以挑选任意多件.</p>
+</blockquote>
+
+<p>还是用上面的dp[i][j]那么现在递推关系变成了这样:</p>
+
+<script type="math/tex; mode=display">
+
+dp[i+1][j] = max\{dp[i][j - k \times w[i]] + k \times v[i] | 0 \le k\}
+
+</script>
+
+<p>然后注意一下在dp[i+1][j]中选择k(k&gt;=1)个的情况与在dp[i+1][j-w[i]]中选择k+1个情况相同. 所以dp[i+1][j]中k&gt;=1的部分已经在dp[i+1][j-w[i]]中计算过. 上面的式子可以这样变形:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+
+\begin{align}
+& max\{dp[i][j - k \times w[i]] + k \times v[i] | 0 \le k\} \\
+& = max(dp[i][j], max\{ dp[i][j - k \times w[i]] + k \times v[i] | 1 \le k \}) \\
+& = max(dp[i][j], max\{ dp[i][(j - w[i]) - k \times w[i]] + k \times v[i] | 0 \le k \} + v[i]) \\
+& = max(dp[i][j], dp[i+1][j-w[i]] + v[i])
+\end{align}
+
+ %]]></script>
+
+<p>参考代码:</p>
+
+<script src="https://gist.github.com/9249042.js"> </script>
 
 <p><br /></p>
 
-<p>如前所述, 当使用三个参数调用的时候<code>type</code>有一个完全独立的使用. <code>type(name, bases, dict)</code>以编程的方式创建了一个 <em>新的</em> 类型.如果我有如下的代码:</p>
-<pre>
-<code class="python">
-class Foo(object):
-    pass
-</code>
-</pre>
-
-<p>那么我们可以用如下的方式实现同样的效果:</p>
-
-<pre>
-<code class="python">
-Foo = type('Foo', (), {})
-</code>
-</pre>
-
-<p><code>Foo</code>现在就是一个叫做”Foo”的类了, 它的基类是<code>object</code>(使用<code>type</code>创建的类, 如果没有指定基类, 就自动创建为新式类).</p>
-
-<p><br /></p>
-
-<p>这样很好, 但是如果我们想给Foo添加成员函数该怎么办呢? 这可以很容易地通过设置Foo的属性来实现, 就像这样:</p>
-<pre>
-<code class="python">
-def always_false(self):
-    return False
-
-Foo.always_false = always_false
-</code>
-</pre>
-
-<p>我们可以使用如下的方法一气呵成:</p>
-<pre>
-<code class="python">
-Foo = type('Foo', (), {'always_false': always_false})
-</code>
-</pre>
-
-<p>当然, <code>bases</code>参数是<code>Foo</code>的一系列基类. 我们已经让它为空了, 但是创建一个源自<code>Foo</code>的新类也是完全有效的, 再一次使用<code>type</code>来创建它:</p>
-<pre>
-<code class="python">
-FooBar = type('FooBar', (Foo), {})
-</code>
-</pre>
-
-<p><br /></p>
-
-<h3 id="section-1">这种方式什么时候有用呢?</h3>
-
-<p><br /></p>
-
-<p>一旦跟某人解释了某些话题, 下一个问题就很可能是”好, 那么我什么时候使用它?”, <code>type</code>和<code>metaclass</code>就是这些话题之一. 答案是, 一点都不常用. 但是, 确实 <em>存在</em> 有时候动态地使用<code>type</code>来创建类是最合适的方法. 让我看一个例子.</p>
-
-<p><br /></p>
-
-<p><a href="http://www.github.com/jeffknupp/sandman">sandman</a>是我写的一个库, 它可以为已经存在的数据库自动生成一个REST API和基于web的管理界面(不需要任何样板代码). 大多数繁重的工作都是由SQLAlchemy完成, SQLAlchemy是一个ORM框架.</p>
-
-<p><br /></p>
-
-<p>使用SQLAlchemy只有一种方法来注册一个数据库的表: 创建一个描述了这张表的<code>Model</code>类(和Django的models没有什么不同). 为了让SQLAlechemy认识这个表, 必须以某种方式创建这个表的类. 既然<code>sandman</code>没有任何关于数据库结构的高级知识, 它不能依赖预先创建的模型类来注册表. 而是, 它需要内省这个数据库然后在内省过程中创建这些类. 听起来很熟悉? 任何你需要动态地创建新类的时候, <code>type</code>就是正确的/唯一的选择.</p>
-
-<p><br /></p>
-
-<p>这是来自<a href="https://www.github.com/jeffknupp/sandman">sandman</a>的相关代码:</p>
-<pre>
-<code class="python">
-if not current_app.endpoint_classes:
-    db.metadata.reflect(bind=db.engine)
-    for name in db.metadata.tables():
-        cls = type(str(name), (sandman_model, db.Model),
-                {'__tablename__': name})
-        register(cls)
-</code>
-</pre>
-
-<p>就像你看到的, 如果用户没有手动为一张表创建一个模型类, 它会自动被创建, 并且<code>__tablename__</code>属性会被设置成这张表的表名(被SQLAlchemy用来匹配表和类).</p>
-
-<p><br /></p>
-
-<h2 id="section-2">总结</h2>
-
-<p><br /></p>
-
-<p>在这篇文章中, 我们讨论了<code>type</code>和<code>metaclasses</code>的用法, 以及什么时候需要使用<code>type</code>的特殊用法. 尽管<code>metaclasses</code>是有些模糊不清的概念, 希望你现在为以后的学习打下了良好的基础.</p>
+<p><strong>未完待续</strong>!</p>
 
 <p><br /></p>
 </div>
 
-
-        
-          <div class="tags">
-            <span>标签: </span>
-            <ul>
-            
-              <li>Python</li>
-            
-            </ul>
-          </div>
-        
       </div>
       <footer role="contentinfo">
         <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://pages.github.com/">Github Pages</a></p>

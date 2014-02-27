@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Here
+title: About
 ---
 
 这里打算用来记录一些Python Weekly或者其他地方看到的好文章, 自己翻译一遍也学到很多东西
@@ -23,7 +23,16 @@ title: About Here
 
  HUST信息安全11级本科生
 
- 嫌弃麻烦偶尔抽风非文艺代码为生不靠谱女青年一枚
+ 嫌弃麻烦偶尔抽风
+
+ 会一点点Python, 一点点点PHP, 一点点点点前端的算法渣 
+
+<br>
+
+  放一份[简历](https://docs.google.com/document/d/1CiEca_jrEqUmEhOkXv0jDzVJpYkEfd1iGSH1MVD9Byo/edit?usp=sharing)
+
+  这是为豆瓣的暑期实习生准备的(去年写好的今年改了改部分). 技能上就是这样了. 所以, **求实习**咯~:)
+ 
 
 <br>
 

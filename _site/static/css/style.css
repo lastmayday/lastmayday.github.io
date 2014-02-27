@@ -1,15 +1,14 @@
 * {margin:0;padding:0;}
 a {color:#369;text-decoration:none;}
 a:visited {color:#369;text-decoration:none;}
-a:hover {color:#222;text-decoration:none;background:#eee;}
-a:active {color:#222;text-decoration:none;background:#eee;}
+a:hover {color:#333;text-decoration:none;background:#FFF;}
+a:active {color:#333;text-decoration:none;background:#FFF;}
 
 
 body {
-  font: 16px/1.5 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;
+  font: 14px/1.5 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
-  background-image: url('../img/wavegrid.png'); background-position: initial; background-repeat: initial;
   color:#333;
   word-break: break-word;
 }
@@ -142,7 +141,6 @@ aside {
   color:#444;
   min-height: 700px;
   height: 100%;
-  border-left: #eee 1px solid;
   position: relative;
   z-index: 1;
   margin-left: 25%;
@@ -245,6 +243,7 @@ footer {
   -moz-border-radius: 3px; 
   border-radius: 3px;
 }
+
 
 /************ 小屏显示 ***************/
 

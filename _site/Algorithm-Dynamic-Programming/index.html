@@ -4,7 +4,7 @@
 　　 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 　　 <title>
-               算法笔记-贪心
+               算法笔记-动态规划
            
     </title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -28,94 +28,96 @@
         </div>
       </aside>
       <div class="content" role="main">
-          <h1>算法笔记-贪心</h1>
-          <div class="info">27 January 2014</div>
+          <h1>算法笔记-动态规划</h1>
+          <div class="info">27 February 2014</div>
           <br />
-          <p>贪心算法还是蛮好理解的.</p>
+          <p>DP好难啊…T_T</p>
+
+<p>智商不够只能慢慢看了…T_T</p>
 
 <p><br /></p>
 
-<h2 id="section">硬币问题</h2>
+<h2 id="section">背包问题</h2>
 
 <p><br /></p>
 
-<p>很简单的一个贪心问题是, 有各种面值不同(1元, 5元, 10元, 等等)的硬币各多少多少枚, 然后要用这些硬币支付N元, 问最少需要多少枚.</p>
+<p>先把<a href="http://cuitianyi.com/blog/%E3%80%8A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E4%B9%9D%E8%AE%B2%E3%80%8B2-0-alpha1/">背包九讲</a>放在这里镇着.</p>
+
+<h3 id="section-1">01背包问题</h3>
 
 <p><br /></p>
 
-<p><del>这个问题因为有1元的硬币所以是一定有解的, 跟前一篇DFS的部分和问题不同. 问最少的话那当然是从最大的硬币开始拿, 不够了再用小的补.</del></p>
-
-<p><del>这个很简单略过.</del></p>
-
-<p>补充条件, 假设一定有解. 一般是把这样的硬币问题当作背包问题, 但是如果能用贪心解的话会比用DP简单.</p>
+<blockquote>
+  <p>有n个重量和价值分别为w<sub>i</sub>, v<sub>i</sub>的物品. 从这些物品中挑出总重量不超过W的物品. 问能挑出的最大价值为多少.</p>
+</blockquote>
 
 <p><br /></p>
 
-<h2 id="section-1">区间调度问题</h2>
+<p>最容易想到的方法是对每一个物品是否放入背包试一下.</p>
+
+<script src="https://gist.github.com/9247240.js"> </script>
 
 <p><br /></p>
 
-<p>有n项工作, 每项工作分别在s<sub>i</sub>时间开始, 在t<sub>i</sub>时间结束. 可以选择参加哪些工作, 但是一旦参加就必须完成. 而且参加工作的时间段不能重叠. 问最多能参加多少份工作.</p>
+<p>DP中貌似分析出状态转移方程是很重要的.(就像高中数学的递推表达式…</p>
+
+<p>那么分析一下这个问题的状态转移. 假定有dp[i][j]表示从前i个物品中选出总重量不超过j的物品时的最大价值. 很显然dp[0][j] = 0. 对于任一i, j, 如果w[i] &gt; j那么dp[i+1][j] = dp[i][j], 否则dp[i+1][j] = max(dp[i][j], dp[i][j-w[i]] + v[i]). 公式如下:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+
+dp[i+1][j] = \left\{ \begin{array}{ll}
+dp[i][j] & \textrm{$j<w[i]$}\\
+max(dp[i][j], dp[i][j-w[i]] + v[i]) & \textrm{$j>=w[i]$}
+\end{array} \right.
+
+ %]]></script>
 
 <p><br /></p>
 
-<p>比方说有5份工作, 开始时间是{1, 2, 4, 6, 8}, 结束时间是{3, 5, 7, 9, 10}</p>
+<p>参考代码:</p>
 
-<p>画图就是这样的:</p>
-
-<p><img src="http://i.imgur.com/GCL35fr.jpg" alt="schedule" /></p>
-
-<p>所以选择1, 3, 5. 最多是3份.</p>
+<script src="https://gist.github.com/9247948.js"> </script>
 
 <p><br /></p>
 
-<p>那算法应该是怎样呢?</p>
+<h3 id="section-2">完全背包问题</h3>
 
 <p><br /></p>
 
-<p>有三种可能:</p>
+<blockquote>
+  <p>有n种重量和价值分别为w<sub>i</sub>, v<sub>i</sub>的物品. 从中挑选总重量不超过W的物品, 求价值总和的最大值. 每种物品可以挑选任意多件.</p>
+</blockquote>
 
-<ul>
-  <li>每次选结束时间最早的</li>
-  <li>每次选用时最短的</li>
-  <li>每次选与最少可选工作有重叠的工作</li>
-</ul>
+<p>还是用上面的dp[i][j]那么现在递推关系变成了这样:</p>
 
-<p><br /></p>
+<script type="math/tex; mode=display">
 
-<p>简单的想, 既然是要最多那么如果结束时间最早的话就可以尽快开始下一个工作, 这样应该是最多的.(自己的想当然…&gt;&lt;) 具体的证明可以看这篇<a href="http://bbs.dlut.edu.cn/nforum/att/Competition/22996/318">文章</a>.</p>
+dp[i+1][j] = max\{dp[i][j - k \times w[i]] + k \times v[i] | 0 \le k\}
 
-<p><br /></p>
+</script>
 
-<p>参考C++代码:</p>
+<p>然后注意一下在dp[i+1][j]中选择k(k&gt;=1)个的情况与在dp[i+1][j-w[i]]中选择k+1个情况相同. 所以dp[i+1][j]中k&gt;=1的部分已经在dp[i+1][j-w[i]]中计算过. 上面的式子可以这样变形:</p>
 
-<script src="https://gist.github.com/8645139.js"> </script>
+<script type="math/tex; mode=display">% <![CDATA[
 
-<p><br /></p>
 
-<h2 id="poj3253">修理栅栏POJ3253</h2>
+\begin{align}
+& max\{dp[i][j - k \times w[i]] + k \times v[i] | 0 \le k\} \\
+& = max(dp[i][j], max\{ dp[i][j - k \times w[i]] + k \times v[i] | 1 \le k \}) \\
+& = max(dp[i][j], max\{ dp[i][(j - w[i]) - k \times w[i]] + k \times v[i] | 0 \le k \} + v[i]) \\
+& = max(dp[i][j], dp[i+1][j-w[i]] + v[i])
+\end{align}
 
-<p><br /></p>
+ %]]></script>
 
-<p>POJ原题: <a href="http://poj.org/problem?id=3253">3253</a></p>
+<p>参考代码:</p>
 
-<p><br /></p>
-
-<p>大致题意是说一块很长的木板要切成N块, 但是每次切割的时候会有开销, 开销等于切的这块木板的长度. 问怎样切使得开销最小.</p>
-
-<p>例如长度为21的木板要切成8, 5, 8这样三块. 第一次切成8和13, 开销为21; 第二次切成5和8, 开销为13. 总开销即为21 + 13 = 34.</p>
+<script src="https://gist.github.com/9249042.js"> </script>
 
 <p><br /></p>
 
-<p>这个问题其实是哈夫曼编码的问题~ 哈夫曼编码根据词频来画二叉树, 这个题目就是根据木板长度来画二叉树.</p>
-
-<p>那么就是先找出最短的两块, 相加为最后一次的开销, 然后假设这两块合成一块放到原来的木板中再找出最短的两块, 相加为倒数第二次的开销, 以此类推直到所有木板合成一块就是第一次的开销, 把所有的开销加起来就是总开销.</p>
-
-<p><br /></p>
-
-<p>参考C++代码:</p>
-
-<script src="https://gist.github.com/8645304.js"> </script>
+<p><strong>未完待续</strong>!</p>
 
 <p><br /></p>
 

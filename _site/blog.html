@@ -15,6 +15,21 @@
     <link rel="stylesheet" href="/static/css/monokai.css">
     <script src="/static/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <!-- mathjax config similar to math.stackexchange -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 　</head>
 
 　<body>
@@ -32,6 +47,9 @@
 
       <div class="content" role="main">
         <ul>
+　　
+　　    <li>27 Feb 2014 <a href="/Algorithm-Dynamic-Programming">算法笔记-动态规划</a>
+       </li>
 　　
 　　    <li>11 Feb 2014 <a href="/Improve-Your-Python-Metaclasses-and-Dynamic-Classes-With-Type">Improve Your Python - Metaclasses and Dyanamic Classes With Types</a>
        </li>
@@ -81,17 +99,6 @@
 
 </div>
 
-
-        
-          <div class="tags">
-            <span>标签: </span>
-            <ul>
-            
-              <li>Python</li>
-            
-            </ul>
-          </div>
-        
       </div>
       <footer role="contentinfo">
         <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://pages.github.com/">Github Pages</a></p>
