@@ -14,6 +14,20 @@
     <link rel="stylesheet" href="/static/css/monokai.css">
     <script src="/static/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      messageStyle: "none",
+      "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+    });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 　</head>
 
 　<body>
@@ -81,6 +95,14 @@ max(dp[i][j], dp[i][j-w[i]] + v[i]) & \textrm{$j>=w[i]$}
 
 <p><br /></p>
 
+<p><strong>感谢kid177</strong> ! 把上面的代码降到了一维~</p>
+
+<p><br /></p>
+
+<script src="https://gist.github.com/9305980.js"> </script>
+
+<p><br /></p>
+
 <h3 id="section-2">完全背包问题</h3>
 
 <p><br /></p>
@@ -113,11 +135,54 @@ dp[i+1][j] = max\{dp[i][j - k \times w[i]] + k \times v[i] | 0 \le k\}
 
 <p>参考代码:</p>
 
-<script src="https://gist.github.com/9249042.js"> </script>
+<script src="https://gist.github.com/9306164.js"> </script>
 
 <p><br /></p>
 
-<p><strong>未完待续</strong>!</p>
+<h2 id="section-3">多重部分和问题</h2>
+
+<p><br /></p>
+
+<blockquote>
+  <p>有n种不同大小的数字a<sub>i</sub>, 每种各m<sub>i</sub>个. 判断是否可以从这些数字中选出若干使它们的和恰好为K.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>用dp[i][j]表示前i种数相加得到j的时候第i种数最多能剩余多少个(不能得到j的时候为-1). 那么如果前i-1种数相加能得到j的话, 第i个数就可以留下m<sub>i</sub>个; 如果前i种数加和为j-a<sub>i</sub>时时第i种数还剩下k(k&gt;0)个的话, 那么dp[i][j]就等于k-1. 这样可以得到下面的递推式:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+
+dp[i+1][j] = \left\{ \begin{array}{ll}
+m_i & \textrm{$dp[i][j]>=0$}\\
+-1 & \textrm{$j<a_i 或者 dp[i+1][j-a_i] <= 0$}\\
+dp[i+1][j-a_i]-1 & \textrm{$其他$}
+\end{array} \right.
+
+ %]]></script>
+
+<p><br /></p>
+
+<script src="https://gist.github.com/9502688.js"> </script>
+
+<p><br /></p>
+
+<h2 id="section-4">最长上升子序列</h2>
+
+<p><br /></p>
+
+<p>序列和字符串不同不需要连续.</p>
+
+<blockquote>
+  <p>长为n的数列a<sub>0</sub>, a<sub>1</sub>, … , a<sub>n-1</sub>. 求出这个序列中的最长上升子序列的长度. 最长上升子序列是指对于任意的i&lt;j都有a<sub>i</sub>&lt;a<sub>j</sub>. 1 &lt;= n &lt;= 1000, 0 &lt;= a<sub>i</sub> &lt;= 1000000.</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>dp[i]为长度为i的最长上升子序列的末尾元素的最小值(不存在即为INF).</p>
+
+<script src="https://gist.github.com/9503169.js"> </script>
 
 <p><br /></p>
 
