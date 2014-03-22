@@ -1,8 +1,23 @@
-* {margin:0;padding:0;}
-a {color:#369;text-decoration:none;}
-a:visited {color:#369;text-decoration:none;}
-a:hover {color:#333;text-decoration:none;background:#FFF;}
-a:active {color:#333;text-decoration:none;background:#FFF;}
+* {
+  margin: 0;
+  padding:0;
+}
+
+a,
+a:visited {
+  color: #369;
+  text-decoration: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: none;
+  background: #FFF;
+}
+a:active {
+  color: #333;
+  text-decoration: none;
+  background: #FFF;
+}
 
 
 body {
@@ -18,6 +33,11 @@ ul {
   padding: 0;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background: #00896C;
+}
 
 strong {
   color: #272727;
@@ -158,7 +178,9 @@ aside {
 .content h2 a {
   font-size:14px;
 }
-.content h2 small,.content h2 small a,.content h2 small a:hover {
+.content h2 small,
+.content h2 small a,
+.content h2 small a:hover {
   font-size:14px;
   color:#999;
   text-decoration:none;
@@ -223,6 +245,10 @@ footer {
 
 .entry-time {
   float: right;
+}
+
+.entry-content a {
+  border-bottom: 1px solid #369;
 }
 
 .tags {
