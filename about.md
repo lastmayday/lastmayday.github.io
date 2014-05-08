@@ -29,13 +29,6 @@ title: About
 
 <br>
 
-  放一份[简历](https://docs.google.com/document/d/1CiEca_jrEqUmEhOkXv0jDzVJpYkEfd1iGSH1MVD9Byo/edit?usp=sharing)
-
-  这是为豆瓣的暑期实习生准备的(去年写好的今年改了改部分). 技能上就是这样了. 所以, **求实习**咯~:)
- 
-
-<br>
-
 ## Contact
 
 <br>

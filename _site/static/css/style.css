@@ -12,6 +12,11 @@ a:hover {
   color: #333;
   text-decoration: none;
   background: #FFF;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  -ms-transition: color 1s ease;
+  -o-transition: color 1s ease;
+  transition: color 1s ease;
 }
 a:active {
   color: #333;
@@ -70,9 +75,9 @@ aside {
 }
 
 .index a {
-    text-decoration: none;
-    color: #FFF; 
-    font-size: 16px;
+  text-decoration: none;
+  color: #FFF; 
+  font-size: 16px;
 }
 
 .circle {
@@ -93,6 +98,11 @@ aside {
     -webkit-box-shadow: 3px 3px 3px #E1A679;
     -moz-box-shadow:3px 3px 3px #E1A679;
     box-shadow:3px 3px 3px #E1A679;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -ms-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
 }
 
 .link {
@@ -167,8 +177,7 @@ aside {
   width: 70%;
   max-width: 1024px;
 }
-.content h1,
-h1 a {
+.content h1 {
   font-size: 20px; 
   color: #3DA0A0;
 }
@@ -248,7 +257,7 @@ footer {
   float: right;
 }
 
-.entry-content a {
+.entry-content a:hover {
   border-bottom: 1px solid #369;
 }
 

@@ -12,6 +12,11 @@ a:hover {
   color: #333;
   text-decoration: none;
   background: #FFF;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  -ms-transition: color 1s ease;
+  -o-transition: color 1s ease;
+  transition: color 1s ease;
 }
 a:active {
   color: #333;
@@ -70,9 +75,9 @@ aside {
 }
 
 .index a {
-    text-decoration: none;
-    color: #FFF; 
-    font-size: 16px;
+  text-decoration: none;
+  color: #FFF; 
+  font-size: 16px;
 }
 
 .circle {
@@ -247,7 +252,7 @@ footer {
   float: right;
 }
 
-.entry-content a {
+.entry-content a:hover {
   border-bottom: 1px solid #369;
 }
 
