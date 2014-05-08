@@ -98,11 +98,6 @@ aside {
     -webkit-box-shadow: 3px 3px 3px #E1A679;
     -moz-box-shadow:3px 3px 3px #E1A679;
     box-shadow:3px 3px 3px #E1A679;
-    -webkit-transition: all .5s ease-in;
-    -moz-transition: all .5s ease-in;
-    -ms-transition: all .5s ease-in;
-    -o-transition: all .5s ease-in;
-    transition: all .5s ease-in;
 }
 
 .link {
