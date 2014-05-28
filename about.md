@@ -25,7 +25,18 @@ title: About
 
  嫌弃麻烦偶尔抽风
 
- 会一点点Python, 一点点点PHP, 一点点点点前端的算法渣 
+ 会一点点Python, 一点点点JavaScript. 正在点C++技能点的算法渣
+
+<br>
+
+## Projects
+
+<br>
+
++ 2013.12 ~ 2014.3   [ElfArtWorld](http://elfartworld.com/) 后台(Python)开发
++ 2013.7   [FMtags](http://fm.hustonline.net) 全部开发
++ 2013.1 ~ 2013.7   [书循环](http://book.hustonline.net) 后台(PHP)开发
++ 其他一些 Demo 请参考 GitHub :)
 
 <br>
 
