@@ -144,7 +144,15 @@ aside {
     line-height: 100px;
 }
 
+.content ol li {
+    margin-left: 2%;
+}
+
 .content ul li {
+    margin-left: 2%;
+}
+
+ul.archieve li {
 	list-style-type: none;
     margin-left: 2%;
 }
