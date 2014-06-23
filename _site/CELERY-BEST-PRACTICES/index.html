@@ -3,9 +3,8 @@
   <head>
 　　 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta property="wb:webmaster" content="f117f09cefe278da" />
 　　 <title>
-               lastmayday's thinking
+               CELERY - BEST PRACTICES
            
     </title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -15,7 +14,6 @@
     <link rel="stylesheet" href="/static/css/solarized_light.css">
     <script src="/static/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <!-- mathjax config similar to math.stackexchange -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       jax: ["input/TeX", "output/HTML-CSS"],
@@ -34,7 +32,6 @@
 
 　<body>
     <div id="wrapper">
-      <header></header>
       <aside>
         <div class="site-info">lastmayday</div>
         <div class="index">
@@ -44,19 +41,11 @@
           <a href="/link.html"><div class="circle link"><span>Link</span></div></a>
         </div>
       </aside>
-
       <div class="content" role="main">
-        
-
-
-
-<div class="entry-time">23 Jun 2014</div>
-<h1>
-
-    <a href="/CELERY-BEST-PRACTICES">CELERY - BEST PRACTICES</a>
-
-</h1>
-<div class="entry-content"><p><a href="https://denibertovic.com/posts/celery-best-practices/">原文地址</a></p>
+          <h1>CELERY - BEST PRACTICES</h1>
+          <div class="info">23 June 2014</div>
+          <br />
+          <p><a href="https://denibertovic.com/posts/celery-best-practices/">原文地址</a></p>
 
 <p><br /></p>
 
@@ -216,8 +205,32 @@ def my_task_A():
 <p>在本地的 Python 聚会上讲了这个之后, 一些人建议我把这个也加到列表里. 它是关于什么的呢? 你不应该传递数据库对象(例如你的 User model)给一个后台任务, 因为这个序列化对象可能保留着陈旧的数据. 你想要做的是把 User id 给任务, 然后这个任务再请求数据库来获取新的 User 对象.</p>
 
 <p><br /></p>
-</div>
 
+
+          
+          <div class="tags">
+            <span>标签: </span>
+            <ul>
+            
+              <li>Python</li>
+            
+              <li>Celery</li>
+            
+            </ul>
+          </div>
+          
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'lastmayday-github'; // required: replace example with your forum shortname
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
       <footer role="contentinfo">
         <p>Powered by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://pages.github.com/">Github Pages</a></p>
