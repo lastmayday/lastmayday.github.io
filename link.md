@@ -5,7 +5,7 @@ title: Friends
 
 [courageJ](http://couragej.github.io/)
 
-<small>写代码的女青年~(勾搭请联系我独家提供各种资料!</small>
+<small>写代码的女青年~</small>
 
 <br>
 
