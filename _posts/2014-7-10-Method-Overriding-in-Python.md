@@ -41,7 +41,7 @@ class Child(Parent):
 
 <br>
 
-可以看到`Child`类是空的, 单色因为它继承自`Parent`, Python负责路由所有方法的调用. 所以你可以使用`Child`对象的`get_value()`方法并且一切都会如期执行.
+可以看到`Child`类是空的, 但是因为它继承自`Parent`, Python负责路由所有方法的调用. 所以你可以使用`Child`对象的`get_value()`方法并且一切都会如期执行.
 <pre>
 <code class="python">
 &gt;&gt;&gt; c = Child()
