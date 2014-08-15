@@ -3,6 +3,7 @@ safe:             true
 lsi:              false
 highlighter:      pygments
 paginate:         20
+paginate_path:    "blog/page:num"
 permalink:        /:title
 
 author:

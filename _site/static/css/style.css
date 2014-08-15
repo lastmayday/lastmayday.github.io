@@ -3,6 +3,11 @@
   padding:0;
 }
 
+::selection {
+  color: #FFF;
+  background: #268785;
+}
+
 a,
 a:visited {
   color: #369;
@@ -369,7 +374,11 @@ and (max-width: 930px){
 
 .face:hover .eye{
   background: none;
-  border-top: 4px #373C38 solid; 
+  border-top: 4px #373C38 solid;
+}
+
+.pagination {
+  margin: 2%;
 }
 
 /* MetroSocial */

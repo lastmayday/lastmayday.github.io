@@ -3,7 +3,7 @@ layout: main
 title: lastmayday's thinking 
 ---
 <ul class="archieve">
-　　{% for post in site.posts %}
+　　{% for post in paginator.posts %}
 　　    <li>{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a>
        </li>
 　　{% endfor %}
@@ -14,32 +14,32 @@ title: lastmayday's thinking
   {% if paginator.previous_page %}
   <span class="previous">
     {% if paginator.previous_page == 1 %}
-    <a href="/">Previous</a>
+    <a href="/blog/">&lt;&lt;</a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}">Previous</a>
+    <a href="/blog/page{{paginator.previous_page}}">Previous</a>
     {% endif %}
   </span>
   {% endif %}
 
-  {% if paginator.total_pages > 2 %}
+  {% if paginator.total_pages >= 2 %}
   {% if paginator.page == 1 %}
       <span class="current-page">1</span>
   {% else %}
-      <a href="/">1</a>
+      <a href="/blog/">1</a>
   {% endif %}
 
   {% for count in (2..paginator.total_pages) %}
       {% if count == paginator.page %}
       <span class="current-page">{{count}}</span>
   {% else %}
-      <a href="/page{{count}}">{{count}}</a>
+      <a href="/blog/page{{count}}">{{count}}</a>
       {% endif %}
   {% endfor %}
   {% endif %}
 
   {% if paginator.next_page %}
   <span class="next">
-    <a href="/page{{paginator.next_page}}">Next</a>
+    <a href="/blog/page{{paginator.next_page}}">&gt;&gt;</a>
   </span>
   {% endif %}
 
