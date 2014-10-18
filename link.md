@@ -21,7 +21,7 @@ title: Friends
 
 <br>
 
-[Cadl](http://cadl.github.io/)
+[cadl](http://blog.cadl.cc/)
 
 <br>
 

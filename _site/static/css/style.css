@@ -380,27 +380,3 @@ and (max-width: 930px){
 .pagination {
   margin: 2%;
 }
-
-/* MetroSocial */
-
-.metro-social{
-  width: 30%;
-  height: 185px;
-}
-.metro-social li{
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-  list-style:none
-}
-.metro-social .dou,.git,.gp,.wb,.in{z-index:7;float:left;margin:1px;position:relative;display:block}
-.metro-social .dou{background:url(http://i.imgur.com/ByJkMKc.png) no-repeat center center #072;width:140px;height:141px}
-.metro-social .git{background:url(http://i.imgur.com/UdJUAmc.png) no-repeat center center #3B3B3B;width:68px;height:70px}
-.metro-social .gp{background:url(http://i.imgur.com/SahGWam.png) no-repeat center center #da4a38;width:69px;height:70px;}
-.metro-social .wb{background:url(http://i.imgur.com/p0EJEVG.png) no-repeat center center #FBC137;width:68px;height:69px}
-.metro-social .in{background:url(http://i.imgur.com/XW7PyAi.png) no-repeat center center #697585;width:69px;height:70px}
-.metro-social li:hover .dou{background:url(http://i.imgur.com/oAdMtox.png) no-repeat center center #072}
-.metro-social li:hover .git{background:url(http://i.imgur.com/D2gCIGr.png) no-repeat center center #3B3B3B}
-.metro-social li:hover .gp{background:url(http://i.imgur.com/1Rx0cMV.png) no-repeat center center #da4a38}
-.metro-social li:hover .wb{background:url(http://i.imgur.com/aXSrnD4.png) no-repeat center center #FBC137}
-.metro-social li:hover .in{background:url(http://i.imgur.com/VCNqadl.png) no-repeat center center #697585}

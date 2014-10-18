@@ -4,6 +4,10 @@
  * @blog http://blog.csdn.net/lufy_Legend
  * @email lufy.legend@gmail.com
  **/
+LGlobal.setDebug(false);
+
+LGlobal.align = LStageAlign.TOP_MIDDLE;
+LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
 LSystem.screen(LStage.FULL_SCREEN);
 
 function doScroll() {
@@ -13,7 +17,7 @@ function doScroll() {
 }
 window.onload = function() {
 	setTimeout(doScroll, 100);
-	init(50,"legend",480,800,main,LEvent.INIT);
+	init(50,"legend",480,600,main,LEvent.INIT);
 };
 window.onorientationchange = function() {
 	setTimeout(doScroll, 100);
@@ -90,7 +94,6 @@ function main(){
 			loadingLayer.setProgress(progress);
 		},
 		function(result){
-			LGlobal.setDebug(true);
 			datalist = result;
 			removeChild(loadingLayer);
 			loadingLayer = null;

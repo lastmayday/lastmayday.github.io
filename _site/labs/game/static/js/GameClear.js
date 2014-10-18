@@ -4,8 +4,7 @@ function GameClear(){
 	var bitmap,layer;
 
 	layer = new LSprite();
-	layer.alpha = 0.7;
-	layer.graphics.drawRect(6,"#096",[50,50,LGlobal.width-100,LGlobal.height-90]);
+	layer.graphics.drawRect(6,"#096",[0, 0, LGlobal.width, LGlobal.height]);
 	self.addChild(layer);
 
 	layer = new LSprite();
@@ -13,10 +12,10 @@ function GameClear(){
 	labelText.color = "#072";
 	labelText.font = "Helvetica";
 	labelText.size = 20;
-    labelText.x = LGlobal.width * 0.2;
-	labelText.y = LGlobal.height * 0.2;
+    labelText.x = LGlobal.width * 0.1;
+	labelText.y = LGlobal.height * 0.1;
 	labelText.weight = "bolder";
-	labelText.text = "Point:"+point.num;
+	labelText.text = "Point: "+point.num;
 	layer.addChild(labelText);
 	layer.x = 100;
 	layer.y = 70;
@@ -32,7 +31,7 @@ function GameClear(){
 	labelText.size = 16;
 	labelText.x = 65;
 	labelText.y = 8;
-	labelText.text = "restart";
+	labelText.text = "再来><";
 	btn_up.addChild(labelText);
 	btn_up.graphics.drawRect(4,"#006400",[0,0,200,40]);
 	var btn_down = new LSprite();
@@ -42,7 +41,7 @@ function GameClear(){
 	labelText.size = 16;
 	labelText.x = 65;
 	labelText.y = 8;
-	labelText.text = "restart";
+	labelText.text = "再来><";
 	btn_down.addChild(labelText);
 	btn_down.graphics.drawRect(4,"#096",[0,0,200,40]);
 	btnReturn = new LButton(btn_up,btn_down);

@@ -1,13 +1,13 @@
 function gameInit(){
 	stageLayer = new LSprite();
 	addChild(stageLayer);
-	var fps = new FPS();
-	addChild(fps);
+	//var fps = new FPS();
+	//addChild(fps);
 	addGameLogo();
 }
 function addGameLogo(){
-	var layer = new GameLogo();
-	stageLayer.addChild(layer);
+	logo_layer = new GameLogo();
+	stageLayer.addChild(logo_layer);
 }
 function addGameClear(){
 	stageLayer.removeAllChild();
@@ -16,6 +16,7 @@ function addGameClear(){
 	stageLayer.addChild(layer);
 }
 function gameStart(){
+    stageLayer.removeChild(logo_layer);
 	stageLayer.removeAllChild();
 	stageLayer.die();
 	var clearList,i,g,num;
@@ -43,8 +44,8 @@ function gameStart(){
 	addGem();
 
 	clock = new Clock();
-	clock.x = LGlobal.width*0.4;
-	clock.y = 640;
+	clock.x = LGlobal.width*0.5;
+	clock.y = 10;
 	backLayer.addChild(clock);
 
 	stageLayer.addEventListener(LMouseEvent.MOUSE_DOWN,onDown);

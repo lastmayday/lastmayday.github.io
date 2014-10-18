@@ -11,7 +11,7 @@ function GameLogo(){
 
 	logoLayer = new LSprite();
 	logoLayer.x = 120;
-	logoLayer.y = 300;
+	logoLayer.y = LGlobal.height * 0.3;
 	for(var i=0;i<8;i++){
 		g = new Gem(i+1);
 		g.x = (i%4)*60;
@@ -25,10 +25,10 @@ function GameLogo(){
 	labelText.font = "Helvetica";
 	labelText.size = 30;
 	labelText.x = 130;
-	labelText.y = 550;
+	labelText.y = LGlobal.height * 0.6;
 	labelText.lineWidth = 4;
-	labelText.text = "Click to start!";
+	labelText.text = "戳一下!";
 	self.addChild(labelText);
 
-	self.addEventListener(LMouseEvent.MOUSE_UP,gameStart);
+	self.addEventListener(LMouseEvent.MOUSE_UP, gameStart);
 };
