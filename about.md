@@ -36,8 +36,8 @@ title: About
 + 邮箱: lastdayinmay#gmail.com
 + [豆瓣](http://www.douban.com/people/lastmayday/)
 + [GitHub](https://github.com/lastmayday)
-+ [新浪微博](http://weibo.com/lastmayday)
 + [Instagram](http://instagram.com/lastmayday)
++ [新浪微博](http://weibo.com/lastmayday)
 + [Twitter](https://twitter.com/lastmayday)
 
 <br>
