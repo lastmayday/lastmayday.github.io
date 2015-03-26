@@ -1,5 +1,5 @@
 ---
-layout: defalt
+layout: default
 title: Advanced Use of Python Decorators and Metaclasses
 tags: Python
 ---

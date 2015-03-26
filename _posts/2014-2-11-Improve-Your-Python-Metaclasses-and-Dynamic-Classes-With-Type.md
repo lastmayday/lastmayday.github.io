@@ -1,5 +1,5 @@
 ---
-layout: defalt
+layout: default
 title: Improve Your Python - Metaclasses and Dyanamic Classes With Types
 tags: Python
 ---

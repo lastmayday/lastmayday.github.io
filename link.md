@@ -33,6 +33,10 @@ title: Friends
 
 <br>
 
-[薛大婶](http://www.cnblogs.com/monxue/)
+[薛大神](http://www.cnblogs.com/monxue/)
+
+<br>
+
+[Mr.Zero](http://cxymrzero.github.io/)
 
 <br>
