@@ -380,3 +380,31 @@ and (max-width: 930px){
 .pagination {
   margin: 2%;
 }
+
+pre {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 5px;
+    border: 1px solid #C3CCD0;
+    background: #FFF;
+    overflow: hidden;
+}
+
+code.has-numbering {
+    margin-left: 24px;
+}
+
+.pre-numbering {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    padding: 0.5em 0.3em 0.5em 0;
+    border-right: 1px solid #C3CCD0;
+    border-radius: 5px 0 0 5px;
+    background-color: #EEE;
+    text-align: right;
+    font-family: Menlo, monospace;
+    font-size: 14px;
+    color: #AAA;
+}
