@@ -68,7 +68,7 @@ img {
 aside {
   font: 2.25em 'Lato', Tahoma, Helvetica, Arial, sans-serif;
   float: left;
-  width: 20%; 
+  width: 20%;
   background-color: #FFF;
   top: 0;
   left: 0;
@@ -81,7 +81,7 @@ aside {
 
 .index a {
   text-decoration: none;
-  color: #FFF; 
+  color: #FFF;
   font-size: 16px;
 }
 
@@ -106,7 +106,7 @@ aside {
 }
 
 .link {
-    background: #227D51; 
+    background: #227D51;
 
 }
 
@@ -118,7 +118,7 @@ aside {
 }
 
 .about {
-    background: #F7C242; 
+    background: #F7C242;
 }
 
 .about:hover {
@@ -129,7 +129,7 @@ aside {
 }
 
 .blog {
-    background: #268785; 
+    background: #268785;
 }
 
 .blog:hover {
@@ -142,7 +142,7 @@ aside {
 .circle:hover{
     color: #000;
 }
- 
+
 .circle span{
     display: block;
     height: 100px;
@@ -186,12 +186,12 @@ ul.archieve li {
   max-width: 1024px;
 }
 .content h1 {
-  font-size: 20px; 
+  font-size: 20px;
   color: #3DA0A0;
 }
 .content h2 {
   font-size: 18px;
-  color: #3DA0A0;  
+  color: #3DA0A0;
 }
 .content h2 a {
   font-size:14px;
@@ -207,22 +207,22 @@ ul.archieve li {
 }
 .content h3 {
   font-size: 16px;
-  color: #3DA0A0;  
+  color: #3DA0A0;
 }
 
 .info {
-  word-wrap: break-word; 
+  word-wrap: break-word;
   text-align: left;
   margin-bottom: 10px;
   border-bottom: 1px dashed #DDD;
   padding-bottom: 8px;
   font: 13px Arial,Helvetica,sans-serif;
   line-height: 150%;
-  color: #666; 
+  color: #666;
   margin-left: 20px;
 }
 .post-pagination{
-  word-wrap: break-word; 
+  word-wrap: break-word;
   text-align: left;
   margin-bottom: 10px;
   border-bottom: 1px dashed #DDD;
@@ -240,8 +240,8 @@ blockquote{
     padding: 15px 15px 5px 48px;
     background: #fdfdfd;
     -webkit-border-radius: 2px;
-    -moz-border-radius: 2px; 
-    border-radius: 2px; 
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     position: relative;
     color: #072;
 }
@@ -284,7 +284,7 @@ footer {
   color: #FFF;
   padding: 3px;
   -webkit-border-radius: 3px;
-  -moz-border-radius: 3px; 
+  -moz-border-radius: 3px;
   border-radius: 3px;
 }
 
@@ -332,14 +332,14 @@ and (max-width: 930px){
   border-radius: 20px;
   -webkit-box-shadow: 3px 3px 3px #E1A679;
   -moz-box-shadow: 3px 3px 3px #E1A679;
-  box-shadow: 3px 3px 3px #E1A679; 
+  box-shadow: 3px 3px 3px #E1A679;
 }
 
 .eye {
   width: 16px;
   height: 16px;
   background: #373C38;
-  border-radius: 8px; 
+  border-radius: 8px;
   display: inline;
   position: relative;
   top: 24px;
@@ -365,7 +365,7 @@ and (max-width: 930px){
 }
 
 .smile {
-  border-radius: 0; 
+  border-radius: 0;
 }
 
 .face:hover .smile{
@@ -383,22 +383,20 @@ and (max-width: 930px){
 
 pre {
     position: relative;
-    margin-bottom: 24px;
     border-radius: 5px;
-    border: 1px solid #C3CCD0;
     background: #FFF;
     overflow: hidden;
 }
 
 code.has-numbering {
-    margin-left: 24px;
+    margin-left: 35px;
 }
 
 .pre-numbering {
     position: absolute;
     top: 0;
     left: 0;
-    width: 20px;
+    width: 30px;
     padding: 0.5em 0.3em 0.5em 0;
     border-right: 1px solid #C3CCD0;
     border-radius: 5px 0 0 5px;

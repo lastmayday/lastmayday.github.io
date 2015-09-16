@@ -3,9 +3,15 @@ layout: default
 title: Friends
 ---
 
-[courageJ](http://couragej.github.io/)
+[courageJ](http://couragej.sinaapp.com/)
 
 <small>写代码的女青年~</small>
+
+<br>
+
+[2BAB](http://2bab.me/)
+
+<small>嘻嘻</small>
 
 <br>
 
