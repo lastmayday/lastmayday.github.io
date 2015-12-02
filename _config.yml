@@ -14,4 +14,7 @@ author_info:      <a href="http://lastmayday.github.io">lastmayday</a>
 copyright:
     - Design by <a href="http://lastmayday.github.io" title="lastmayday" target="_blank">lastmayday</a> &copy; 2013-2015
 
-gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets, jekyll-paginate, jekyll-gist]
+
+gist:
+  noscript: false
