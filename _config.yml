@@ -1,7 +1,7 @@
 markdown:         kramdown
 safe:             true
 lsi:              false
-highlighter:      pygments
+highlighter:      rouge
 paginate:         20
 paginate_path:    "blog/page:num"
 permalink:        /:title
