@@ -15,6 +15,12 @@ title: Friends
 
 <br>
 
+[sporeg](http://sporeg.xyz/)
+
+<small>还是不是软妹子了!</small>
+
+<br>
+
 [Linusp](http://linusp.github.io/)
 
 <small>小婷婷你好还欠我礼物!</small>
@@ -23,7 +29,7 @@ title: Friends
 
 [灭灭](http://houkanshan.github.io/)
 
-<small>( >﹏<。)</small>
+<small>。</small>
 
 <br>
 
