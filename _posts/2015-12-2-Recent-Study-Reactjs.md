@@ -21,7 +21,7 @@ tags: JavaScript
 
 <br>
 
-[官网](http://facebook.github.io/react/), 入门看官网教程准没错.
+[官网](https://facebook.github.io/react/), 入门看官网教程准没错.
 个人理解简单的说是个 View 层的处理复杂交互比较友好的一个框架.
 
 <br>
@@ -31,7 +31,7 @@ tags: JavaScript
 <br>
 
 刚接触的时候非常不习惯, 因为觉得 JSX 这种把 HTML 和 JS 混在一块儿写的语法真是太丑了.
-后来读了下[这本书](http://book.douban.com/subject/26378583/), 渐渐觉得可以接受了, 以及觉得 React 好像有点厉害啊!
+后来读了下[这本书](https://book.douban.com/subject/26378583/), 渐渐觉得可以接受了, 以及觉得 React 好像有点厉害啊!
 
 <br>
 
@@ -51,7 +51,7 @@ React 上手很容易, 这段时间用起来感觉难点主要在对生命周期
 <br>
 
 下面这张图画了 React 的生命周期, 还是比较容易看懂的.
-![生命周期](http://i.imgur.com/PPqIIQa.png)
+![生命周期](https://i.imgur.com/PPqIIQa.png)
 
 因为项目中的数据基本都是 AJAX 异步加载, 所以在涉及到父组件传递数据给子组件然后子组件需要根据该数据更新相关内容的情况就会有点复杂.
 如果仅仅在子组件的 `componentWillMount` 中获取子组件内容的话那么父组件传递给子组件的值更新之后该内容不会相应地更新.

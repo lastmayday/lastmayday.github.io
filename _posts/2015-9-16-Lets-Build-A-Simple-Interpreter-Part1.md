@@ -20,14 +20,14 @@ tags: Python
 
 那么你知道编译器和解释器怎么工作吗?
 我的意思是, 你是100%确定自己知道它们怎样工作的吗? 如果你不是.
-![dontKnow](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_i_dont_know.png)
+![dontKnow](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_i_dont_know.png)
 
 或者你不是并且对此感到很激动.
-![dontKnow2](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_omg.png)
+![dontKnow2](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_omg.png)
 
 不要担心. 如果你坚持看完这个系列并和我一起搭建一个解释器和编译器, 那么你最后就会知道它们是怎么工作的.
 并且你也会成为一个自信快乐的人. 至少我希望如此.
-![know](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_i_know.png)
+![know](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_i_know.png)
 
 <br>
 
@@ -59,7 +59,7 @@ Elixir, Go, Rust 只是一小部分.
 我们认为如果一个翻译器把源程序翻译成了机器语言, 那么它就是一个编译器.
 如果一个翻译器处理并执行源程序而不用先把它翻译成机器语言, 那么它就是一个解释器.
 看上去就像这样:
-![compilerAndInterpreter](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_compiler_interpreter.png)
+![compilerAndInterpreter](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_compiler_interpreter.png)
 
 <br>
 
@@ -300,24 +300,24 @@ calc>
 (把这个字符串当作一组字符). `pos` 初始化为 0 并指向字符 `'3'`.
 这个方法首先检查这个字符是不是一个整数, 如果是,
 那么增加 `pos` 并返回一个类型是 INTEGER 值为字符串`'3'`的整数值也就是 _3_ 的 token 实例:
-![token1](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer1.png)
+![token1](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer1.png)
 
 <br>
 
 `pos` 现在指向 `text` 中的 `'+'` 字符. 下次你调用这个方法的时候, 它检查 `pos` 这个位置的字符是不是一个整数,
 然后检查它是不是加号, 嗯它就是加号. 因此 `pos` 再加一并返回一个新创建的 token, 类型为 PLUS 值为 `'+'`:
-![token2](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer2.png)
+![token2](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer2.png)
 
 <br>
 
 `pos` 现在指向了字符 `'5'`. 当你再调用 `get_next_token` 方法时, 这个方法检查它是否是一个整数,
 嗯它就是, 所以增加 `pos` 并返回一个新的 INTEGER token, token 的值为整数 _5_:
-![token3](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer3.png)
+![token3](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer3.png)
 
 <br>
 
 因为 `pos` 索引现在传递了字符串 _"3+5"_ 的末尾, `get_next_token` 方法每次调用的时候就返回 EOF token:
-![token4](http://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer4.png)
+![token4](https://ruslanspivak.com/lsbasi-part1/lsbasi_part1_lexer4.png)
 
 <br>
 
@@ -375,7 +375,7 @@ INTEGER -> PLUS -> INTEGER. 也就是, 它试图去找到一列 tokens: 整数�
 <br>
 
 现在是练习时间.
-![exercises](http://ruslanspivak.com/lsbasi-part1/lsbasi_exercises2.png)
+![exercises](https://ruslanspivak.com/lsbasi-part1/lsbasi_exercises2.png)
 
 <br>
 
