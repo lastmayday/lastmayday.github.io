@@ -34,10 +34,28 @@ title: About
 <br>
 
 + 邮箱: lastdayinmay#gmail.com
-+ [豆瓣](http://www.douban.com/people/lastmayday/)
++ [豆瓣](https://www.douban.com/people/lastmayday/)
 + [GitHub](https://github.com/lastmayday)
-+ [Instagram](http://instagram.com/lastmayday)
++ [Instagram](https://instagram.com/lastmayday)
 + [新浪微博](http://weibo.com/lastmayday)
 + [Twitter](https://twitter.com/lastmayday)
+
+<br>
+
+## More
+
+<br>
+
+  写过一些小东西:
+
+  + [ElfArtWorld](http://elfartworld.com/)
+  + [HUST Library](https://chrome.google.com/webstore/detail/hust-library/abbdkngccefmkgifkakoglhpifohekig?hl=zh-CN)
+
+  <br>
+
+  打赏一杯咖啡?
+  <div class="alipay">
+    <img src="http://i.imgur.com/y3S88VU.jpg" />
+  </div>
 
 <br>

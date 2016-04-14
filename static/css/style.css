@@ -406,3 +406,8 @@ code.has-numbering {
     font-size: 14px;
     color: #AAA;
 }
+
+.alipay img {
+  margin-left: inherit;
+  margin-right: inherit;
+}
