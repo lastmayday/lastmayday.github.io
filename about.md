@@ -5,7 +5,7 @@ title: About
 
 这里翻译居多
 
-另外有一个 [Blog](http://error404.sinaapp.com) 碎碎念居多
+另外有一个 [Blog](http://error404.lastmayday.org/) 碎碎念居多
 
 <br>
 
