@@ -3,10 +3,6 @@ layout: default
 title: About
 ---
 
-这里翻译居多
-
-另外有一个 [Blog](http://error404.lastmayday.org/) 碎碎念居多
-
 <br>
 
 <div class="face">
