@@ -254,6 +254,154 @@ private static final boolean RED = true;private static final boolean BLACK = fa
 
 <br>
 
+----
+
+<br>
+
+update at 2018.03.16
+
+<br>
+
+## Java TreeMap 的具体实现
+
+<br>
+
+理论介绍完了之后我们来看下 Java 的一个数据结构 `TreeMap` 里对红黑树的具体实现.
+
+<br>
+
+### put
+
+<br>
+
+`TreeMap` 的 `put` 操作里, `fixAfterInsertion(e);` 执行前的一部分代码是正常的 BST 找到新结点的位置, 然后执行 `fixAfterInsertion(e);` 对红黑树进行操作.
+
+(代码不贴了, 大家自己看 JDK 源码)
+
+<br>
+
+然后具体看下 `fixAfterInsertion` 的操作.
+
+<br>
+
+<pre>
+<code class="java">
+/** From CLR */
+private void fixAfterInsertion(Entry<K,V> x) {
+    x.color = RED;
+
+    while (x != null && x != root && x.parent.color == RED) {
+        if (parentOf(x) == leftOf(parentOf(parentOf(x)))) {
+            Entry<K,V> y = rightOf(parentOf(parentOf(x)));
+            if (colorOf(y) == RED) {
+                setColor(parentOf(x), BLACK);
+                setColor(y, BLACK);
+                setColor(parentOf(parentOf(x)), RED);
+                x = parentOf(parentOf(x));
+            } else {
+                if (x == rightOf(parentOf(x))) {
+                    x = parentOf(x);
+                    rotateLeft(x);
+                }
+                setColor(parentOf(x), BLACK);
+                setColor(parentOf(parentOf(x)), RED);
+                rotateRight(parentOf(parentOf(x)));
+            }
+        } else {
+            Entry<K,V> y = leftOf(parentOf(parentOf(x)));
+            if (colorOf(y) == RED) {
+                setColor(parentOf(x), BLACK);
+                setColor(y, BLACK);
+                setColor(parentOf(parentOf(x)), RED);
+                x = parentOf(parentOf(x));
+            } else {
+                if (x == leftOf(parentOf(x))) {
+                    x = parentOf(x);
+                    rotateRight(x);
+                }
+                setColor(parentOf(x), BLACK);
+                setColor(parentOf(parentOf(x)), RED);
+                rotateLeft(parentOf(parentOf(x)));
+            }
+        }
+    }
+    root.color = BLACK;
+}
+</code>
+</pre>
+
+<br>
+
+新节点的边置为红色. `while` 循环内部的逻辑如下.
+
+<br>
+
+#### 1.1
+
+<br>
+
+第一个 `if` 内部并且 `colorOf(y) == RED` 的情况, 对应上述介绍里的 `promotion`.
+
+<div style="width:400px;margin-left:auto;margin-right:auto;">
+<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-promotion.png" />
+</div>
+
+<br>
+
+#### 1.2
+
+<br>
+
+第一个 `if` 内部并且 `colorOf(y) == BLACK` 的情况, 如果 x 是它父节点的右子节点, 那么对应上述介绍里的 `Left-Right Double Rotation`.
+
+![left-right-rotation](http://p5nypm0pe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-03-16%20%E4%B8%8B%E5%8D%8812.04.23.png)
+
+<br>
+
+#### 1.3
+
+<br>
+
+第一个 `if` 内部并且 `colorOf(y) == BLACK` 的情况, 如果 x 是它父节点的左子节点, 那么对应上述介绍里的 `Right Rotation`.
+
+<div style="width:600px;margin-left:auto;margin-right:auto;">
+<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-right-rotation.png" />
+</div>
+
+<br>
+
+#### 1.4
+
+<br>
+
+第一个 `if` 的 `else` 情况并且 `colorOf(y) == RED`, 此时和 1.1 相同, 对应 `promotion`.
+
+<div style="width:400px;margin-left:auto;margin-right:auto;">
+<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-promotion2.png" />
+</div>
+
+<br>
+
+#### 1.5
+
+<br>
+
+第一个 `if` 的 `else` 情况并且 `colorOf(y) == BLACK`, 如果 x 是它父节点的左子节点, 那么对应上述介绍里的 `Right-Left Double Rotation`.
+
+![right-left-rotation](http://p5nypm0pe.bkt.clouddn.com/treemap-right-left-rotation.png)
+
+<br>
+
+#### 1.6
+
+第一个 `if` 的 `else` 情况并且 `colorOf(y) == BLACK`, 如果 x 是它父节点的右子节点, 那么对应上述介绍里的 `Left Rotation`.
+
+<div style="width:600px;margin-left:auto;margin-right:auto;">
+<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-left-rotation.png" />
+</div>
+
+<br>
+
 
 
 
