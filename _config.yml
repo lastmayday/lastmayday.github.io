@@ -5,6 +5,18 @@ highlighter:      rouge
 paginate:         20
 paginate_path:    "blog/page:num"
 permalink:        /:title
+kramdown:
+    input: GFM
+    hard_wrap: false
+    syntax_highlighter: rouge
+    extensions: fenced_code_blocks
+    syntax_highlighter_opts:
+        default_lang: csharp
+        css_class: 'highlight'
+        span:
+          line_numbers: false
+        block:
+          line_numbers: true
 
 author:
     name:         lastmayday
@@ -12,7 +24,7 @@ description:      "lastmayday's Blog"
 author_info:      <a href="http://lastmayday.github.io">lastmayday</a>
 
 copyright:
-    - Design by <a href="http://lastmayday.github.io" title="lastmayday" target="_blank">lastmayday</a> &copy; 2013-2015
+    - Design by <a href="http://lastmayday.github.io" title="lastmayday" target="_blank">lastmayday</a> &copy; 2013-2018
 
 gems:
   - jekyll-paginate

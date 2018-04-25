@@ -6,11 +6,11 @@ tags: Java
 
 又半年了, 再来写个小结.
 
-<br>
+
 
 ### 工作流水
 
-<br>
+
 
 年初写了一部分 Angular 1, 相比 React , 不是很喜欢 Angular.
 
@@ -18,7 +18,7 @@ tags: Java
 
 不过更可能是因为我学艺不精才会这样觉得, 并没有比较多地去了解 Angular, 能实现功能就可以.
 
-<br>
+
 
 之后写了两三周的 React Native, 撸了一个内部用的非常简单的 iOS APP.
 
@@ -28,26 +28,26 @@ tags: Java
 
 这个项目并不是团队的需求, 也不算我的 KPI, PD 也不懂设计手机 APP, 落得匆匆收场, 只当自己玩了一把 React Native.
 
-<br>
+
 
 再之后被转组了, 到了现在这个组. 写我们组应用的后台管理, 偶尔写写控制台的前端.
 
 比之前写的 Java 稍微多了一点点. 以及两个组的 Java 架构有略微不同, 之前组里使用 Spring , 这个组里用的是 Spring Boot;
 之前组里使用 MyBatis , 现在组里使用 JPA.
 
-<br>
+
 
 关于 Java, 目前还没踩到特别的坑. 记录两个用过的方法.
 
-<br>
+
 
 ### Spring ThreadPoolTaskExecutor
 
-<br>
+
 
 需求是要使用RPC发送日志记录, 这不是一个需要实时返回的需求, 而且为了避免阻塞原来的线程, 所以考虑使用 Spring 的 `ThreadPoolTaskExecutor` 执行日志操作.
 
-<br>
+
 
 在 `application-context.xml` 中增加 `ThreadPoolTaskExecutor` 的 bean:
 
@@ -92,17 +92,17 @@ public class XXX {
 
 最后在需要记录日志的代码中调用 `xxx.log(...)` 即可.
 
-<br>
+
 
 ### SpringBoot Aspect
 
-<br>
+
 
 需求同样是记录日志, 和上面不同的是, 这里只有部分操作需要记录日志, 并且不是 RPC 发送日志请求, 而是直接往自己的数据库里写数据.
 
 另外由于原代码较复杂, 为了不破坏原代码, 这里选择了 Aspect , 把需要记录日志的函数做为切入点.
 
-<br>
+
 
 先在 pom.xml 中增加 AspectJ 和 SpringBoot AOP 依赖:
 
@@ -151,21 +151,21 @@ public class XXX {
 
 关于 Aspect 的更多用法可以参考文档 [Aspect Oriented Programming with Spring](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html).
 
-<br>
+
 
 ### 其他
 
-<br>
+
 
 对于公共对象, 公共服务等有进一步理解. 当多个系统需要用到同样的对象和功能的时候, 就需要提取出公共类.
 或者需要其中一个系统提供 RPC 供其他系统使用. 否则代码耦合太紧, 一份代码写几遍等等非常不利于维护.
 
-<br>
+
 
 对于后台管理系统, 权限控制和操作记录非常重要.
 对于没有权限的用户, 可以直接向他们隐藏掉这些页面或功能, 而不是等到他们点击的时候再提醒他们没权限.
 
-<br>
+
 
 如果是提供 API 的话, 返回值最好统一.
 使用静态方法 `AbcResult.success(...)` 或 `AbcResult.fail(...)` 返回成功的结果或失败结果.
@@ -189,15 +189,15 @@ public class AbcResult {
 }
 ```
 
-<br>
+
 
 另外, 在大公司呆着, 务必注意信息安全. 数据泄漏啊高危操作啊什么的, 可能一次 root 登录服务器都会被安全的人找... (苦笑...)
 
-<br>
+
 
 ### 感受
 
-<br>
+
 
 从六月到现在, 值班了一个多月. 对自己的影响不小, 几个非技术上的感受:
 
@@ -207,7 +207,7 @@ public class AbcResult {
 
 3. 涉及到收费的服务, 用户就是大爷, 计费务必谨慎
 
-<br>
+
 
 对目前的工作状态仍然说不上满意, 感觉自己在大团队里已经被定性了: 写前端的.
 
@@ -216,8 +216,6 @@ public class AbcResult {
 
 现在干的活儿说白了也还是前端的活儿, 写 Java 的时候大部分也只是写写 API.
 
-<br>
+
 
 这样的感觉非常不好.
-
-<br>

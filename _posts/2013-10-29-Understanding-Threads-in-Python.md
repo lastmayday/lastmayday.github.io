@@ -6,7 +6,7 @@ tags: Python Threads
 
 [原文地址](http://agiliq.com/blog/2013/09/understanding-threads-in-python/)
 
-<br>
+
 
 你会看到一些在Python中使用线程的例子以及怎样避免竞态条件:
 
@@ -14,7 +14,7 @@ tags: Python Threads
 
 免责声明: 请暂时忘掉你听说过的关于GIL的任何东西, 因为GIL不会影响我想要展示的情况.
 
-<br>
+
 
 ## Example 1
 
@@ -22,8 +22,7 @@ tags: Python Threads
 
 ### 单线程方法
 
-<pre>
-<code class="python">
+```python
 def get_responses():
     urls = ['http://www.google.com', 'http://www.amazon.com', 'http://www.ebay.com',
         'http://www.alibaba.com', 'http://www.reddit.com']
@@ -36,21 +35,18 @@ def get_responses():
 
 get_responses()
 
-</code>
-</pre>
+```
 
 输出的结果是:
 
-<pre>
-<code class="python">
+```text
 http://www.google.com 200
 http://www.amazon.com 200
 http://www.ebay.com 200
 http://www.alibaba.com 200
 http://www.reddit.com 200
 Elapsed time: 3.0814409256
-</code>
-</pre>
+```
 
 **解释**:
 
@@ -62,14 +58,13 @@ Elapsed time: 3.0814409256
 
 即使在一个单线程的程序中, 也只有一个执行线程. 我们叫它`主线程`. 所以, 上一个例子只有一个线程, 也就是主线程.
 
-<br>
+
 
 ### 多线程方法
 
 你需要创建Thread类的一个子类:
 
-<pre>
-<code class="python">
+```python
 import time
 import urllib2
 
@@ -101,20 +96,17 @@ def get_responses():
 
 
 get_responses()
-</code>
-</pre>
+```
 
 输出:
-<pre>
-<code class="python">
+```python
 http://www.reddit.com 200
 http://www.google.com 200
 http://www.amazon.com 200
 http://www.alibaba.com 200
 http://www.ebay.com 200
 Elapsed time: 0.689890861511
-</code>
-</pre>
+```
 
 **解释**:
 
@@ -136,7 +128,7 @@ Elapsed time: 0.689890861511
 
 + 我们对所有的线程都调用`join()`所以已用时间只会在所有线程都执行以后才被打印出来.
 
-<br>
+
 
 **关于线程的一些东西**:
 
@@ -148,7 +140,7 @@ Elapsed time: 0.689890861511
 
 + 这意味着和这个线程有关的url会首先被获取然后才收到的响应会被打印出来.
 
-<br>
+
 
 ## Example 2
 
@@ -156,8 +148,7 @@ Elapsed time: 0.689890861511
 
 先读一下[维基百科的例子](http://en.wikipedia.org/wiki/Race_condition#Example)来理解下竞态条件是什么意思.
 
-<pre>
-<code class="python">
+```python
 from threading import Thread
 
 #define a global variable
@@ -188,8 +179,7 @@ def use_increment_thread():
 
 
 use_increment_thread()
-</code>
-</pre>
+```
 
 多次运行这个程序, 你会发现你每次得到的值都不一样.
 
@@ -201,7 +191,7 @@ use_increment_thread()
 
 + 这里有50个线程, 所以最后`some_var`的值应该是50, 但是并不是这样.
 
-<br>
+
 
 **为什么some_var的值不到50?**
 
@@ -217,14 +207,13 @@ use_increment_thread()
 
 + 同样的竞态条件也可能发生多次, 所以`some_var`的值最后是41或42这样小于50的值.
 
-<br>
+
 
 **修复这个竞态条件**
 
 把IncrementThread中的`run()`修改为:
 
-<pre>
-<code class="python">
+```python
 from threading import Lock
 
 lock = Lock()
@@ -241,8 +230,7 @@ class IncrementThread(Thread):
         some_var = read_value + 1
         print "some_var in %s after increment is %d" % (self.name, some_var)
         lock.release()
-</code>
-</pre>
+```
 
 再运行一次use_increment_thread就会得到期望的结果了.
 
@@ -260,7 +248,7 @@ class IncrementThread(Thread):
 
 + Lock是一个单独的对象, 如果有线程的内容调用了它, 它就会被线程获取.
 
-<br>
+
 
 ## Example 3
 
@@ -268,8 +256,7 @@ class IncrementThread(Thread):
 
 这个例子中引入了`time.sleep()`函数. 它会确保一个线程处于暂停状态, 因此强制线程交换发生.
 
-<pre>
-<code class="python">
+```python
 import time
 from threading import Thread
 
@@ -290,21 +277,19 @@ def use_create_list_thread():
 
 
 use_create_list_thread()
-</code>
-</pre>
+```
 
 运行几次之后发现列表并没有被合适地打印出来.
 
-<br>
+
 
 可能是某个线程的`entries`正在打印的时候处理器切换到了其他线程并且开始打印其他线程的`entries`. 我们想要确保对于每个单独的线程, `entries`都是一个打印完了再开始下一个.
 
-<br>
+
 
 用lock来改变CreateListThread的`run()`:
 
-<pre>
-<code class="python">
+```python
 class CreateListThread(Thread):
     def run(self):
         self.entries = []
@@ -314,16 +299,15 @@ class CreateListThread(Thread):
         lock.acquire()
         print self.entries
         lock.release()
-</code>
-</pre>
+```
 
 所以, 我们把打印操作放到了一个lock里面. 当一两个线程获得锁并且在打印它的entries时, 其他的线程都不能打印它们的entries. 这样你就会看到不同线程的entries在各行被打印出来了.
 
-<br>
+
 
 这会显示所有线程的entries, 它是一个实例变量, 从0到9的一个列表. 所以线程交换不会影响某个线程的实例变量.
 
-<br>
+
 
 **相关文章**
 
@@ -332,6 +316,3 @@ class CreateListThread(Thread):
 + [Process and Threads for Beginners](http://agiliq.com/blog/2013/09/process-and-threads-for-beginners/)
 
 + [Producer-consumer problem in Python](http://agiliq.com/blog/2013/10/producer-consumer-problem-in-python/)
-
-
-<br>

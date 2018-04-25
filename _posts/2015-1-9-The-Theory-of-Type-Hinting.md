@@ -6,11 +6,11 @@ tags: Python
 
 [原文地址](https://quip.com/r69HA9GhGa7J)
 
-<br>
+
 
 ## 概述
 
-<br>
+
 
 这篇文档列举了为 Python 3.5 提出的新的类型约束的理论.
 它并不是完整的提议或规范因为很多细节还需要讨论.
@@ -19,11 +19,11 @@ tags: Python
 然后我们定义新的特殊类型(例如 Union), 这些类型可以在注释中使用;
 最后我们定义泛型类型的方法.(后一部分需要进一步充实; 抱歉!)
 
-<br>
+
 
 ## 进阶类型综述
 
-<br>
+
 
 我们定义一个新的关系, 与...一致(is-consistent-with), 它和是...的子类(is-subclass-of)类似,
 除了在涉及新类型**Any**的时候它是未传递的.(这两种关系都不是对称的.)
@@ -41,7 +41,7 @@ tags: Python
 换句话说, **Any** 和 **object** 都意味着"允许任意类型"当它们被用来注释参数的时候,
 但是只有 **Any** 可以被传给任意期望类型(在本质上, **Any** 关闭了静态检查的报错).
 
-<br>
+
 
 这里有一个例子展示实际中这些规则是怎么使用的:
 
@@ -62,11 +62,11 @@ tags: Python
 + 当然也可以把`e`赋值给`a`(规则3), 但是这里我们不需要一致性的概念:
     - `a = e  # OK `
 
-<br>
+
 
 ## 符号约定
 
-<br>
+
 
 + `t1`, `t2`等以及`u1`, `u2`等是类型或者类. 有时候我们用`ti`或者`tj`来指代"任意的t1, t2等等"
 + `X`, `Y`等是类型变量(使用`Var()`定义, 见下).
@@ -74,22 +74,22 @@ tags: Python
 + `x`, `y`等是对象或者实例.
 + 我们使用术语类型和类互换, 并且我们假设`type(x)`就是`x.__class__`.
 
-<br>
+
 
 ## 一般规则
 
-<br>
+
 
 + Instance-ness 派生自 class-ness, 例如如果`type(x)`是`t1`的子类的话那么`x`是`t1`的一个实例
 + 下面定义的类型(i.e. Any, Union 等)都不能被实例化.(但是 Generic 的非抽象的子类可以.)
 + 下面定义的类型不能被子类, 除了 Generic 和派生自它的类.
 + 当需要 type 的时候, `None`可以取代`type(None)`; 例如`Union[t1, None] == Union[t1, type(None)]`.
 
-<br>
+
 
 ## 类型
 
-<br>
+
 
 + **Any**. 每一个类都是`Any`的子类; 然而对于静态类型检查器来说它也和每一个类一致(见上).
 + **Union[t1, t2, ...]**. 至少是t1等其中一个子类的类都是这个的子类(译注: 好绕口啊...). 所以它的组件都是t1等等的子类.
@@ -122,11 +122,11 @@ tags: Python
 Intersection 和 Union 之间的相互作用很复杂, 但是不应该感到奇怪如果你理解了集合理论中交集和并集的相互作用的话
 (注意类型的集合在数量上可能是无限的, 既然对新的子类没有数目限制).
 
-<br>
+
 
 ## 语用
 
-<br>
+
 
 一些和理论不相干的东西但是使得实际使用更加方便.(这不是完整的列表; 我可能掉了一点并且有些还有争论或者没有完全确定.)
 
@@ -146,11 +146,11 @@ Intersection 和 Union 之间的相互作用很复杂, 但是不应该感到奇�
     - `x = Undefined(str)`
 + 其他的, 如 cast, overloading 以及 stub modules; 最好留给正式的 PEP.
 
-<br>
+
 
 ## 泛型类型
 
-<br>
+
 
 (TODO: 解释更多. 参考[mypy docs on generics](http://mypy.readthedocs.org/en/latest/generics.html).)
 
@@ -182,11 +182,11 @@ Intersection 和 Union 之间的相互作用很复杂, 但是不应该感到奇�
 没有噱头比方说从`Sequence[Union[int, str]]`或者`Sequence[Union[int, X]]`派生.
 + **协议**. 和泛型相似但是使用结构等价.(TODO: 解释, 并且想想协方差)
 
-<br>
+
 
 ## 预定义的泛型类型以及 TYPING.PY 中的协议
 
-<br>
+
 
 (参考[mypy typing.py module](https://github.com/JukkaL/typing/blob/master/typing.py))
 
@@ -194,5 +194,3 @@ Intersection 和 Union 之间的相互作用很复杂, 但是不应该感到奇�
 + Dict, List, Set, 更多.(FrozenSet?)
 + Pattern, Match.(为什么?)
 + IO, TextIO, BinaryIO.(为什么?)
-
-<br>

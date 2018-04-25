@@ -43,10 +43,15 @@ ul {
   padding: 0;
 }
 
+p {
+  padding: 4px 0;
+}
+
 hr {
   border: none;
   height: 2px;
   background: #00896C;
+  margin: 18px 0;
 }
 
 strong {
@@ -55,7 +60,15 @@ strong {
 }
 
 h1 {
-  margin: 0 0 10px 0;
+  margin: 16px 0;
+}
+
+h2 {
+  margin: 12px 0;
+}
+
+h3, h4, h5, h6 {
+  margin: 8px 0;
 }
 
 img {
@@ -175,8 +188,8 @@ ul.archieve li {
 
 .content {
   top: 0;
-  float:left;
-  color:#444;
+  float: left;
+  color: #444;
   min-height: 700px;
   height: 100%;
   position: relative;
@@ -194,16 +207,16 @@ ul.archieve li {
   color: #3DA0A0;
 }
 .content h2 a {
-  font-size:14px;
+  font-size: 14px;
 }
 .content h2 small,
 .content h2 small a,
 .content h2 small a:hover {
-  font-size:14px;
-  color:#999;
-  text-decoration:none;
-  padding-left:4px;
-  background-color:#fff;
+  font-size: 14px;
+  color: #999;
+  text-decoration: none;
+  padding-left: 4px;
+  background-color: #fff;
 }
 .content h3 {
   font-size: 16px;
@@ -212,14 +225,13 @@ ul.archieve li {
 
 .info {
   word-wrap: break-word;
-  text-align: left;
-  margin-bottom: 10px;
+  text-align: right;
+  margin-bottom: 8px;
   border-bottom: 1px dashed #DDD;
   padding-bottom: 8px;
-  font: 13px Arial,Helvetica,sans-serif;
+  font: 12px Arial,Helvetica,sans-serif;
   line-height: 150%;
   color: #666;
-  margin-left: 20px;
 }
 .post-pagination{
   word-wrap: break-word;
@@ -233,24 +245,29 @@ ul.archieve li {
 }
 
 blockquote{
-    margin: 0 0 10px;
-    border: 1px solid #ECECEC;
-    border-left: 3px solid rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0 0 10px rgba(0,0,0,.06);
-    padding: 15px 15px 5px 48px;
-    background: #fdfdfd;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    position: relative;
-    color: #072;
+  margin: 16px auto;
+  font-style: italic;
+  color: #666;
+  padding: 1.2em 32px 1.2em 72px;
+  border-left: 8px solid #00896C;
+  line-height: 1.6;
+  position: relative;
+  background: #F5F5F5;;
+  border-radius: 4px;
 }
 
-code {
-    border-radius: 5px;
-    padding: 1px 2px;
-    color: #F04747;
-    background-color: #F9F9F9;
+blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color: #00896C;
+  font-size: 4em;
+  position: absolute;
+  left: 8px;
+  top: -8px;
+}
+
+blockquote::after{
+  content: '';
 }
 
 footer {
@@ -263,6 +280,7 @@ footer {
 
 .entry-time {
   float: right;
+  margin: 16px 0;
 }
 
 .entry-content a:hover {
@@ -270,12 +288,18 @@ footer {
 }
 
 .tags {
-  margin-bottom: 20px;
+  margin: 16px 0;
+}
+
+.tags ul li {
+  margin-left: 0;
 }
 
 .tags span {
   font-size: 16px;
   color: #00896C;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .tags ul li{
@@ -318,6 +342,14 @@ and (max-width: 930px){
 
   .entry-time {
 	  float: none;
+  }
+
+  .content ol li {
+      margin-left: 6%;
+  }
+
+  .content ul li {
+      margin-left: 6%;
   }
 }
 
@@ -381,33 +413,23 @@ and (max-width: 930px){
   margin: 2%;
 }
 
-pre {
-    position: relative;
-    border-radius: 5px;
-    background: #FFF;
-    overflow: hidden;
-}
-
-code.has-numbering {
-    margin-left: 35px;
-}
-
-.pre-numbering {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    padding: 0.5em 0.3em 0.5em 0;
-    border-right: 1px solid #C3CCD0;
-    border-radius: 5px 0 0 5px;
-    background-color: #EEE;
-    text-align: right;
-    font-family: Menlo, monospace;
-    font-size: 14px;
-    color: #AAA;
-}
-
 .alipay img {
   margin-left: inherit;
   margin-right: inherit;
+}
+
+/***** 代码块 ****/
+
+pre.highlight {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin:  8px 0;
+}
+
+p code {
+  margin: 0 4px;
+  padding: 0 4px;
+  background-color: #F9F9F9;
+  border-radius: 4px;
+  color: #586e75;
 }
