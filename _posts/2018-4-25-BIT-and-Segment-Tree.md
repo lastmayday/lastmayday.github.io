@@ -5,8 +5,8 @@ tags: Algorithm
 ---
 
 Binary Indexed Tree (BIT) 是一种数据结构, 看名字就能看出来是个 binary tree. 它可以用来解决数组区间的问题.
-比如给定一个数组, 求范围 [i, j] 内所有值的和. 如果每次通过遍历求和, 那么时间复杂度是 O(n);
-通过使用 BIT 可以把时间复杂度降低到 O(log(n)).
+比如给定一个数组, 求范围 [i, j] 内所有值的和. 如果每次通过遍历求和, 那么时间复杂度是 $$O(n)$$;
+通过使用 BIT 可以把时间复杂度降低到 $$O(log(n))$$.
 
 Segment Tree 和 BIT 比较类似, BIT 能解决的问题一般用 Segment Tree 也能解决.
 
@@ -18,7 +18,7 @@ Segment Tree 和 BIT 比较类似, BIT 能解决的问题一般用 Segment Tree 
 给定一个都是整型的数组, 计算出下标 i 到下标 j 这个区间内的所有数字的和, i <= j 并且包含 i 和 j.
 `update(i, val)` 函数把下标 i 所在位置的值更新为 val.
 
-假设数组为 [2, 3, 1, 4, 3, 2].
+假设数组为 $$[2, 3, 1, 4, 3, 2]$$.
 
 ### 构建 BIT
 
@@ -28,20 +28,20 @@ Segment Tree 和 BIT 比较类似, BIT 能解决的问题一般用 Segment Tree 
 
 上图的最下层是数组索引, 然后是原数组; 最上层是生成的 Binary Indexed Tree, 下方是表示该 BIT 的数组.
 
-我们在原数组的头部新增加一个空值, 然后忽略索引 0 , 即从 1 开始表示原数组. 新数组 nums[] = [0, 2, 3, 1, 4, 3, 2].
+我们在原数组的头部新增加一个空值, 然后忽略索引 0 , 即从 1 开始表示原数组. 新数组 $$nums[] = [0, 2, 3, 1, 4, 3, 2]$$.
 
-对于奇数索引(如上图中的 1, 3, 5), 在新的 BIT 数组中填入原数组对应的值, 如 tree[1] = nums[1].
+对于奇数索引(如上图中的 1, 3, 5), 在新的 BIT 数组中填入原数组对应的值, 如 $$tree[1] = nums[1]$$.
 对于偶数索引(如上图中的 0, 2, 4), 在新的 BIT 数组中的值, 是它左子树的和加上原数组对应的值得到的.
-比如 tree[2] = 5 = tree[1] + nums[2] = nums[1] + nums[2] = 2 + 3 = 5.
+比如 $$tree[2] = 5 = tree[1] + nums[2] = nums[1] + nums[2] = 2 + 3 = 5$$.
 
 ### 计算区间和
 
 这样 BIT 构建成功之后, 如果要计算原来的数组区间 [i, j] 的和, 就可以通过 tree[] 数组计算出 [0, i] 的和 sum<sub>i</sub>, 以及 [0, j + 1] 的和 sum<sub>j</sub>, 再用 sum<sub>j</sub> - sum<sub>i</sub> 得到结果.
 
 那么 sum<sub>i</sub> 要怎么计算?
-假设 j = 5, 需要计算 sum<sub>5</sub> .即 j + 1 = 6, 6 用二进制表示为 110. 那么使用二进制表示: s[110] =  tree[100] + tree[110] . 即 s[6] = tree[4] + tree[6] = 10 + 5 = 15.
+假设 j = 5, 需要计算 sum<sub>5</sub> .即 j + 1 = 6, 6 用二进制表示为 110. 那么使用二进制表示: $$s[110] =  tree[100] + tree[110]$$ . 即 $$s[6] = tree[4] + tree[6] = 10 + 5 = 15$$.
 
-再假设 j = 2, 需要计算 sum<sub>2</sub> . 即 j + 1 = 3, 3 用二进制表示为 011. 那么使用二进制表示: s[011] = tree[010] + tree[011] = 5 + 1 = 6 .
+再假设 j = 2, 需要计算 sum<sub>2</sub> . 即 j + 1 = 3, 3 用二进制表示为 011. 那么使用二进制表示: $$s[011] = tree[010] + tree[011] = 5 + 1 = 6$$ .
 
 这里计算和 s 其实就是对于某个索引的二进制表示, 从低位到高位依次把 1 变成 0 得到值就是 bit 数组的索引, 直到所有位都变成 0. 再把这些值和该索引在 bit 的值相加. 比如上面的 011 -> 010 -> 000.
 
@@ -92,7 +92,7 @@ public void update(int i, int val) {
 
 假设我们需要获取索引 i 的原始值.
 
-一种方法是通过 `getTreeSum(i + 1) - getTreeSum(i)` 获取, 这种方法的时间复杂度是 2 * O(log(n)) .
+一种方法是通过 `getTreeSum(i + 1) - getTreeSum(i)` 获取, 这种方法的时间复杂度是 $$2 * O(log(n))$$ .
 
 另一种方法, 对于任意索引 x, 它的前序节点 y, 可以把 y 表示成 a0b, 其中 b 全部由 1 组成. 那么 x = a1b<sup>-</sup>, 通过之前的算法知道在把最低位的 1 变成 0 之后 x = a0b<sup>-</sup>, 记为 z. 对 y 同样从低位开始把 1 转成 0, 那么 y 会变成 a0b<sup>-</sub> 即 z.
 
@@ -113,7 +113,7 @@ public int getSingle(int i) {
 }
 ```
 
-第二种方法, 对于 BIT 奇数索引, 时间复杂度是 O(1); 对于 BIT 偶数索引, 时间复杂度是 c * O(log(n)), c < 1.
+第二种方法, 对于 BIT 奇数索引, 时间复杂度是 $$O(1)$$; 对于 BIT 偶数索引, 时间复杂度是 $$c * O(log(n))$$, c < 1.
 
 ### 其他用法
 
@@ -123,16 +123,107 @@ public int getSingle(int i) {
 - T(i, j) : 把 [i, j] 区间内的牌翻面, 包含 i 和 j. 即朝上的牌翻面后朝下, 朝下的牌翻面后朝上
 - Q(i) : 如果第 i 张牌朝下那么返回 0, 朝上返回 1
 
-最直接的做法是每次翻牌就遍历一遍. 但通过 Binary Indexed Tree 可以把时间复杂度控制到 O(log(n)).
+最直接的做法是每次翻牌就遍历一遍. 但通过 Binary Indexed Tree 可以把时间复杂度控制到 $$O(log(n))$$.
 
 新建一个数组 f[], f[i] 初始化为 0. 当执行 T(i, j) 的时候, 把 f[i]++ 并且 f[j+1]--. 当执行 Q(i) 的时候, 其实是否返回 f[0, i] 区间内的和 sum % 2.
 
 ## Segment Tree
 
-TODO...
+Segment Tree 也是一种 binary tree, 类似上面介绍的 Binary Indexed Tree, 用于解决区间问题.
+Segment Tree 的每一个节点都代表一个区间.
+
+假设有数组 A[], 大小为 N, 那么对应的 Segment Tree 记为 T:
+
+1. T 的根节点代表整个数组区间 [0, N - 1]
+2. T 的每个叶子节点都是数组里的一个元素 A[i], 0 <= i < N
+3. T 的中间节点代表数组区间 A[i, j], 0 <= i < j < N
+
+Segment Tree 的根节点代表整个数组区间 $$[0, N - 1]$$, 根节点的两个子节点分别代表区间 $$[0, (N - 1) / 2]$$ 和 $$[(N - 1) / 2 + 1, N - 1]$$. 如此往复把区间折半, 直到叶子节点代表数组里某个具体的值.
+Segment Tree 的高度为 $$log_2 N$$ , 有 N 个叶子节点代表数组的 N 个元素, 有 N - 1 个内部节点, 所以总节点数为 2 * N - 1.
+
+### 构建 Segment Trees
+
+可以通过递归的方式从顶至下构建 Segment Tree. 相应代码如下:
+
+```java
+void build(int node, int start, int end) {
+    if (start == end) {
+        // Leaf node will have a single element
+        tree[node] = A[start];
+    } else {
+        int mid = (start + end) / 2;
+        // Recurse on the left child
+        build(2 * node, start, mid);
+        // Recurse on the right child
+        build(2 * node + 1, mid + 1, end);
+        // Internal node will have the sum of both of its children
+        tree[node] = tree[2 * node] + tree[2 * node + 1];
+    }
+}
+```
+
+这样对于之前使用的数组 $$[2, 3, 1, 4, 3, 2]$$, 构建出 Segment Tree 如下:
+
+<img src="http://oujx0uay0.bkt.clouddn.com/segment-tree.png" style="width:600px;" />
+
+### 计算区间和
+
+对于 Segment Tree 的某个节点表示的区间范围, 有几种情况:
+
+- 节点表示的区间 $$[i, j]$$ 正好在请求计算的区间 $$[l, r]$$ 范围内. 那么直接返回节点值
+- 节点表示的区间 $$[i, j]$$ 完全不在请求计算的区间 $$[l, r]$$ 范围内. 那么直接返回 0
+- 节点表示的区间 $$[i, j]$$ 部分在请求计算的区间 $$[l, r]$$ 范围内. 那么计算该节点两个子节点, 再返回和
+
+时间复杂度为 $$O(logN)$$. 相应代码如下:
+
+```java
+int query(int node, int start, int end, int l, int r) {
+    if (r < start || end < l) {
+        // range represented by a node is completely outside the given range
+        return 0;
+    }
+    if (l <= start && end <= r) {
+        // range represented by a node is completely inside the given range
+        return tree[node];
+    }
+    // range represented by a node is partially inside and partially outside the given range
+    int mid = (start + end) / 2;
+    int p1 = query(2 * node, start, mid, l, r);
+    int p2 = query(2 * node + 1, mid + 1, end, l, r);
+    return p1 + p2;
+}
+```
+
+### 更新索引值
+
+更新数组的某个值, 只用在 Segment Tree 中找到包含该值的区间并递归更新即可. 更新的时间复杂度为 $$O(logN)$$.
+
+相关代码如下:
+
+```java
+void update(int node, int start, int end, int idx, int val) {
+    if (start == end) {
+        // Leaf node
+        A[idx] += val;
+        tree[node] += val;
+    } else {
+        int mid = (start + end) / 2;
+        if (start <= idx && idx <= mid) {
+            // If idx is in the left child, recurse on the left child
+            update(2 * node, start, mid, idx, val);
+        } else {
+            // if idx is in the right child, recurse on the right child
+            update(2 * node + 1, mid + 1, end, idx, val);
+        }
+        // Internal node will have the sum of both of its children
+        tree[node] = tree[2 * node] + tree[2 * node + 1];
+    }
+}
+```
 
 
 ## Reference
 
 - [Binary Indexed Trees](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
 - [BIT: What is the intuition behind a binary indexed tree and how was it thought about?](https://cs.stackexchange.com/questions/10538/bit-what-is-the-intuition-behind-a-binary-indexed-tree-and-how-was-it-thought-a)
+- [Segment Trees](https://www.hackerearth.com/zh/practice/data-structures/advanced-data-structures/segment-trees/tutorial/)
