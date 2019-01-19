@@ -45,11 +45,17 @@ title: About
   + [ElfArtWorld](http://elfartworld.com/)
   + [HUST Library](https://chrome.google.com/webstore/detail/hust-library/abbdkngccefmkgifkakoglhpifohekig?hl=zh-CN)
 
+  And, a WeChat mini program:
+  <div class="weixin">
+    <img src="https://i.imgur.com/9kdA5zh.jpg" />
+  </div>
+
+
   <br>
 
   Would you like to buy me a coffee?
   <div class="alipay">
-    <img src="http://i.imgur.com/y3S88VU.jpg" />
+    <img src="https://i.imgur.com/y3S88VU.jpg" />
   </div>
 
 <br>

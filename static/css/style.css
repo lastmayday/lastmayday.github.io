@@ -418,6 +418,13 @@ and (max-width: 930px){
   margin-right: inherit;
 }
 
+.weixin img {
+  width: 180px;
+  height: auto;
+  margin-left: inherit;
+  margin-right: inherit;
+}
+
 /***** 代码块 ****/
 
 pre.highlight {
