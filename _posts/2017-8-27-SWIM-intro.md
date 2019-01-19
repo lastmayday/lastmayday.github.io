@@ -48,7 +48,7 @@ SWIM 协议主要由两个部分组成:
 
 
 
-![swim1](http://oujx0uay0.bkt.clouddn.com/swim1)
+![swim1](http://qiniu.lastmayday.com/swim1)
 
 
 

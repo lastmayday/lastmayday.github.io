@@ -44,7 +44,7 @@ tags: Algorithm
 
 
 <div style="width:300px;margin-left:auto;margin-right:auto;">
-<img src="http://oujx0uay0.bkt.clouddn.com/23tree">
+<img src="http://qiniu.lastmayday.com/23tree">
 </div>
 
 
@@ -74,10 +74,10 @@ tags: Algorithm
 
 <div style="display:flex;justify-content:space-around;">
 <div style="width:300px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/23tree-insert2" />
+<img src="http://qiniu.lastmayday.com/23tree-insert2" />
 </div>
 <div style="width:200px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/23tree-insert3" />
+<img src="http://qiniu.lastmayday.com/23tree-insert3" />
 </div>
 </div>
 
@@ -91,7 +91,7 @@ tags: Algorithm
 
 
 
-![red-black-bst](http://oujx0uay0.bkt.clouddn.com/redblack-bst)
+![red-black-bst](http://qiniu.lastmayday.com/redblack-bst)
 
 
 
@@ -113,7 +113,7 @@ tags: Algorithm
 ```java
 private static final boolean RED = true;private static final boolean BLACK = false;private class Node{
     Key key;    Value val;    Node left, right; // subtrees    int N;            // # nodes in this subtree    boolean color;    // color of link from parent to this node
-        Node(Key key, Value val, int N, boolean color) {
+    Node(Key key, Value val, int N, boolean color) {
         this.key = key;
         this.val = val;
         this.N = N;
@@ -142,7 +142,7 @@ private static final boolean RED = true;private static final boolean BLACK = fa
 
 
 
-![2-3-4-Tree-Insertion](http://oujx0uay0.bkt.clouddn.com/234tree-insert)
+![2-3-4-Tree-Insertion](http://qiniu.lastmayday.com/234tree-insert)
 
 
 
@@ -182,7 +182,7 @@ private static final boolean RED = true;private static final boolean BLACK = fa
 
 
 <div style="width:300px;margin-left:auto;margin-right:auto;">
-<img src="http://oujx0uay0.bkt.clouddn.com/234tree-rbt" />
+<img src="http://qiniu.lastmayday.com/234tree-rbt" />
 </div>
 
 
@@ -205,16 +205,16 @@ private static final boolean RED = true;private static final boolean BLACK = fa
 
 <div style="display:flex;justify-content:space-around;">
 <div style="width:240px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/redblack-right-rotation" />
+<img src="http://qiniu.lastmayday.com/redblack-right-rotation" />
 </div>
 <div style="width:240px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/redblack-left-rotation" />
+<img src="http://qiniu.lastmayday.com/redblack-left-rotation" />
 </div>
 <div style="width:240px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/redblacktree-left-right-rotation" />
+<img src="http://qiniu.lastmayday.com/redblacktree-left-right-rotation" />
 </div>
 <div style="width:240px;">
-<img src="http://oujx0uay0.bkt.clouddn.com/redblacktree-right-left-rotation" />
+<img src="http://qiniu.lastmayday.com/redblacktree-right-left-rotation" />
 </div>
 </div>
 
@@ -231,7 +231,7 @@ private static final boolean RED = true;private static final boolean BLACK = fa
 
 
 <div style="width:300px;margin-left:auto;margin-right:auto;">
-<img src="http://oujx0uay0.bkt.clouddn.com/redblacktree-promotion" />
+<img src="http://qiniu.lastmayday.com/redblacktree-promotion" />
 </div>
 
 

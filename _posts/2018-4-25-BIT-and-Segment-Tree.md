@@ -24,7 +24,7 @@ Segment Tree 和 BIT 比较类似, BIT 能解决的问题一般用 Segment Tree 
 
 那么通过这个给定的数组我们可以构造一个 BIT 的数据结构, 如下图所示.
 
-<img src="http://oujx0uay0.bkt.clouddn.com/bit.png" style="width:600px;" />
+<img src="http://qiniu.lastmayday.com/bit.png" style="width:600px;" />
 
 上图的最下层是数组索引, 然后是原数组; 最上层是生成的 Binary Indexed Tree, 下方是表示该 BIT 的数组.
 
@@ -68,7 +68,7 @@ public int getTreeSum(int i) {
 
 即更新后如下所示(更新的节点用红框表示):
 
-<img src="http://oujx0uay0.bkt.clouddn.com/bit2.png" style="width:600px;" />
+<img src="http://qiniu.lastmayday.com/bit2.png" style="width:600px;" />
 
 上面我们已经知道了 num & -num = a1b & a<sup>-</sup>1b = (0...0)1(0...0) , 那么 num + (num & - num) 就可以得到大于 num 的下一个待更新节点.
 
@@ -164,7 +164,7 @@ void build(int node, int start, int end) {
 
 这样对于之前使用的数组 $$[2, 3, 1, 4, 3, 2]$$, 构建出 Segment Tree 如下:
 
-<img src="http://oujx0uay0.bkt.clouddn.com/segment-tree.png" style="width:600px;" />
+<img src="http://qiniu.lastmayday.com/segment-tree.png" style="width:600px;" />
 
 ### 计算区间和
 
