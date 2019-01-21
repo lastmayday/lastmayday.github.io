@@ -111,9 +111,17 @@ tags: Algorithm
 每个节点的数据结构如下, 用 `color` 标记该节点到父节点的 link 颜色.
 
 ```java
-private static final boolean RED = true;private static final boolean BLACK = false;private class Node{
-    Key key;    Value val;    Node left, right; // subtrees    int N;            // # nodes in this subtree    boolean color;    // color of link from parent to this node
-    Node(Key key, Value val, int N, boolean color) {
+private static final boolean RED = true;
+private static final boolean BLACK = false;
+private class Node
+{
+    Key key;
+    Value val;
+    Node left, right; // subtrees
+    int N;            // # nodes in this subtree
+    boolean color;    // color of link from parent to this node
+
+    Node(Key key, Value val, int N, boolean color) {
         this.key = key;
         this.val = val;
         this.N = N;
@@ -350,7 +358,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 
 第一个 `if` 内部并且 `colorOf(y) == BLACK` 的情况, 如果 x 是它父节点的右子节点, 那么对应上述介绍里的 `Left-Right Double Rotation`.
 
-![left-right-rotation](http://p5nypm0pe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-03-16%20%E4%B8%8B%E5%8D%8812.04.23.png)
+![left-right-rotation](http://qiniu.lastmayday.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-03-16%20%E4%B8%8B%E5%8D%8812.04.23.png)
 
 
 
@@ -361,7 +369,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 第一个 `if` 内部并且 `colorOf(y) == BLACK` 的情况, 如果 x 是它父节点的左子节点, 那么对应上述介绍里的 `Right Rotation`.
 
 <div style="width:600px;margin-left:auto;margin-right:auto;">
-<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-right-rotation.png" />
+<img src="http://qiniu.lastmayday.com/treemap-right-rotation.png" />
 </div>
 
 
@@ -373,7 +381,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 第一个 `if` 的 `else` 情况并且 `colorOf(y) == RED`, 此时和 1.1 相同, 对应 `promotion`.
 
 <div style="width:400px;margin-left:auto;margin-right:auto;">
-<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-promotion2.png" />
+<img src="http://qiniu.lastmayday.com/treemap-promotion2.png" />
 </div>
 
 
@@ -384,7 +392,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 
 第一个 `if` 的 `else` 情况并且 `colorOf(y) == BLACK`, 如果 x 是它父节点的左子节点, 那么对应上述介绍里的 `Right-Left Double Rotation`.
 
-![right-left-rotation](http://p5nypm0pe.bkt.clouddn.com/treemap-right-left-rotation.png)
+![right-left-rotation](http://qiniu.lastmayday.com/treemap-right-left-rotation.png)
 
 
 
@@ -393,5 +401,5 @@ private void fixAfterInsertion(Entry<K,V> x) {
 第一个 `if` 的 `else` 情况并且 `colorOf(y) == BLACK`, 如果 x 是它父节点的右子节点, 那么对应上述介绍里的 `Left Rotation`.
 
 <div style="width:600px;margin-left:auto;margin-right:auto;">
-<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-left-rotation.png" />
+<img src="http://qiniu.lastmayday.com/treemap-left-rotation.png" />
 </div>
