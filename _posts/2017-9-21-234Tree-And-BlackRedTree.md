@@ -347,7 +347,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 第一个 `if` 内部并且 `colorOf(y) == RED` 的情况, 对应上述介绍里的 `promotion`.
 
 <div style="width:400px;margin-left:auto;margin-right:auto;">
-<img src="http://p5nypm0pe.bkt.clouddn.com/treemap-promotion.png" />
+<img src="http://qiniu.lastmayday.com/treemap-promotion.png" />
 </div>
 
 
