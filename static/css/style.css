@@ -440,3 +440,15 @@ p code {
   border-radius: 4px;
   color: #586e75;
 }
+
+#toc {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fafafa;
+  margin-bottom: 8px;
+}
+
+#toc a:hover {
+  background: #fafafa;
+}

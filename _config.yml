@@ -17,6 +17,7 @@ kramdown:
           line_numbers: false
         block:
           line_numbers: true
+toc_levels: 1..2
 
 author:
     name:         lastmayday

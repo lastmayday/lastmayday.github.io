@@ -4,6 +4,9 @@ title: Binary Indexed Tree and Segment Tree
 tags: Algorithm
 ---
 
+* toc
+{:toc #toc}
+
 Binary Indexed Tree (BIT) 是一种数据结构, 看名字就能看出来是个 binary tree. 它可以用来解决数组区间的问题.
 比如给定一个数组, 求范围 [i, j] 内所有值的和. 如果每次通过遍历求和, 那么时间复杂度是 $$O(n)$$;
 通过使用 BIT 可以把时间复杂度降低到 $$O(log(n))$$.

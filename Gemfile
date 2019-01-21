@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org/'
+source 'https://gems.ruby-china.com'
 
 require 'json'
 require 'open-uri'
