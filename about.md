@@ -17,7 +17,7 @@ title: About
 
 <br>
 
- B.A., Information Security, HUST, 2015.
+ B.., Information Security, HUST, 2015.
 
  Write code in Java, Python, JavaScript, etc.
 
