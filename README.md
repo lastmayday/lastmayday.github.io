@@ -1,2 +1,5 @@
-Translate some articles about Python or something else.
-Maybe somewhere there isn't translated well, please let me know. Thanks~ :)
+It's a personal blog.
+
+The contents include programming language, algorithm notes, and other thoughts.
+
+Please visit at [https://lastmayday.org/](https://lastmayday.org/).
