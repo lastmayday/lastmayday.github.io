@@ -142,7 +142,8 @@ Segment Tree 的每一个节点都代表一个区间.
 3. T 的中间节点代表数组区间 A[i, j], 0 <= i < j < N
 
 Segment Tree 的根节点代表整个数组区间 $$[0, N - 1]$$, 根节点的两个子节点分别代表区间 $$[0, (N - 1) / 2]$$ 和 $$[(N - 1) / 2 + 1, N - 1]$$. 如此往复把区间折半, 直到叶子节点代表数组里某个具体的值.
-Segment Tree 的高度为 $$log_2 N$$ , 有 N 个叶子节点代表数组的 N 个元素, 有 N - 1 个内部节点, 所以总节点数为 2 * N - 1.
+
+如果用数组表示 Segment Tree, 那么分配的数组大小为 4N, 参考[这个讨论](https://codeforces.com/blog/entry/54786).
 
 ### 构建 Segment Trees
 
@@ -191,8 +192,8 @@ int query(int node, int start, int end, int l, int r) {
     }
     // range represented by a node is partially inside and partially outside the given range
     int mid = (start + end) / 2;
-    int p1 = query(2 * node, start, mid, l, r);
-    int p2 = query(2 * node + 1, mid + 1, end, l, r);
+    int p1 = query(2 * node, start, mid, l, min(mid, r));
+    int p2 = query(2 * node + 1, mid + 1, end, max(mid + 1, l), r);
     return p1 + p2;
 }
 ```
@@ -230,3 +231,4 @@ void update(int node, int start, int end, int idx, int val) {
 - [Binary Indexed Trees](https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/)
 - [BIT: What is the intuition behind a binary indexed tree and how was it thought about?](https://cs.stackexchange.com/questions/10538/bit-what-is-the-intuition-behind-a-binary-indexed-tree-and-how-was-it-thought-a)
 - [Segment Trees](https://www.hackerearth.com/zh/practice/data-structures/advanced-data-structures/segment-trees/tutorial/)
+- [Segment Tree](https://cp-algorithms.com/data_structures/segment_tree.html)
